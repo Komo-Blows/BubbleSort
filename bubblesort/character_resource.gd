@@ -1,7 +1,7 @@
 class_name character
 extends Resource
 
-enum NamedEnum {fishy, irish, child}
-@export var major: NamedEnum
-@export var minor: NamedEnum
+
+@export var major: Globals.aesthetic
+@export var minor: Globals.aesthetic
 @export var image: Image
