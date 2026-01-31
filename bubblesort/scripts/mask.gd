@@ -1,13 +1,22 @@
 extends Area2D
-class_name mask
+#class_name mask
 
 @export var aesthetic: aesthetics_picker
+
+@onready
+var sprite = $image
 
 func add_accessory(accessory):
 	accessory.reparent(self)
 
 #current charm that is selected
 var focus_charm
+
+func _ready() -> void:
+	Signals.connect("mask_shape_selected", new_mask)
+
+func new_mask() -> void:
+	sprite
 
 func _on_body_entered(body: Node2D) -> void:
 	print("got something")

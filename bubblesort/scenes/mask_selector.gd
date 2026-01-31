@@ -15,7 +15,7 @@ func enable():
 	for child in grid_container.get_children():
 		child.animator.play("slide_in")
 
-func disable():
+func disable(o):
 	visible = false
 
 func _ready() -> void:
