@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6850us3kuhpt"]
+
+[ext_resource type="Script" uid="uid://dqamcsesgg8q2" path="res://accessory_scene.gd" id="1_712mg"]
+[ext_resource type="Resource" uid="uid://6o66abw1qvi2" path="res://accessories/bat_charm.tres" id="2_8mlyu"]
+
+[node name="accessory_scene" type="Node2D"]
+script = ExtResource("1_712mg")
+accessory = ExtResource("2_8mlyu")

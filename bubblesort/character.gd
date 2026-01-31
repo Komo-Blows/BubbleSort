@@ -5,8 +5,8 @@ extends Node2D
 @export
 var current_character : character
 
-var major_aesthetic : Globals.aesthetic
-var minor_aesthetic : Globals.aesthetic
+var major_aesthetic : Globals.aesthetics
+var minor_aesthetic : Globals.aesthetics
 
 func update_character(char : character):
 	sprite.texture = char.image

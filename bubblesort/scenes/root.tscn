@@ -24,3 +24,5 @@ polygon = PackedVector2Array(-1.19626, -63, 58.6168, -57, 64, -4, 59.8131, 59, 0
 script = ExtResource("4_28aoi")
 
 [node name="character" parent="." instance=ExtResource("5_jh1ax")]
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]

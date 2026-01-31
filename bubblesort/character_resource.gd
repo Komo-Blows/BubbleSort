@@ -2,6 +2,6 @@ class_name character
 extends Resource
 
 
-@export var major: Globals.aesthetic
-@export var minor: Globals.aesthetic
+@export var major: Globals.aesthetics
+@export var minor: Globals.aesthetics
 @export var image: Image

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="accessory" load_steps=3 format=3 uid="uid://6o66abw1qvi2"]
+
+[ext_resource type="Texture2D" uid="uid://ujxblwu1bfen" path="res://sprites/cute_bat.png" id="1_etrmc"]
+[ext_resource type="Script" uid="uid://ct50su2tauap" path="res://accessory.gd" id="1_onwt3"]
+
+[resource]
+script = ExtResource("1_onwt3")
+techy = 0
+fishy = 0
+cutesy = 1
+preppy = 0
+ugly = 0
+demonic = 2
+cowboy = 0
+irish = 0
+badly_drawn = 0
+image = ExtResource("1_etrmc")
+metadata/_custom_type_script = "uid://ct50su2tauap"
