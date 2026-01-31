@@ -4,22 +4,23 @@
 [ext_resource type="Script" uid="uid://ct50su2tauap" path="res://scripts/accessory_resource.gd" id="1_ach2h"]
 [ext_resource type="Texture2D" uid="uid://d2q6qc0hro0cl" path="res://sprites/cowboy_cog.png" id="2_gfxux"]
 
-[sub_resource type="Resource" id="Resource_rgxtt"]
+[sub_resource type="Resource" id="Resource_0jr66"]
 script = ExtResource("1_0jr66")
-techy = 2
+techy = 0
 fishy = 0
 cutesy = 0
 preppy = 0
 ugly = 0
 demonic = 0
-cowboy = 3
-irish = 0
-badly_drawn = 2
+cowboy = 2
+irish = 1
+badly_drawn = 1
 metadata/_custom_type_script = "uid://blc2d1hrqqvph"
 
 [resource]
 script = ExtResource("1_ach2h")
-aesthetics = SubResource("Resource_rgxtt")
+aesthetic = SubResource("Resource_0jr66")
+name = ""
 image = ExtResource("2_gfxux")
 image_scale = 1.0
 collision_radius = 20

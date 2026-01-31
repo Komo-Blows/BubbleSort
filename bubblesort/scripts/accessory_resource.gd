@@ -2,7 +2,7 @@
 extends Resource
 class_name Accessory
 
-@export var aesthetics: aesthetics_picker # see aesthetics_picker_resource.gd
+@export var aesthetic: aesthetics_picker # see aesthetics_picker_resource.gd
 
 @export var name : String
 @export var image = Texture2D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kvbplsrjjkgn"]
+[gd_scene load_steps=13 format=3 uid="uid://kvbplsrjjkgn"]
 
 [ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://scripts/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://wl1o0cj7npw8" path="res://scenes/mask.tscn" id="2_jh1ax"]
@@ -72,6 +72,12 @@ _data = {
 &"slide out": SubResource("Animation_jh1ax")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jh1ax"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kycxp"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j287u"]
+
 [node name="root" type="Node2D"]
 script = ExtResource("1_pq8q7")
 
@@ -96,3 +102,18 @@ libraries = {
 
 [node name="mask selector" parent="." instance=ExtResource("6_kycxp")]
 visible = false
+
+[node name="walls_and_floor" type="StaticBody2D" parent="."]
+
+[node name="floor" type="CollisionShape2D" parent="walls_and_floor"]
+position = Vector2(890, 1080)
+shape = SubResource("WorldBoundaryShape2D_jh1ax")
+
+[node name="leftwall" type="CollisionShape2D" parent="walls_and_floor"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_kycxp")
+
+[node name="rightwall" type="CollisionShape2D" parent="walls_and_floor"]
+position = Vector2(1920, 0)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_j287u")

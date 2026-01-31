@@ -23,3 +23,14 @@ func get_dict() -> Dictionary:
 	Globals.aesthetics.irish: irish,
 	Globals.aesthetics.badly_drawn: badly_drawn,
 	}
+
+func add(new):
+	techy += new.techy
+	fishy += new.fishy
+	cutesy += new.cutesy
+	preppy += new.preppy
+	ugly += new.ugly
+	demonic += new.demonic
+	cowboy += new.cowboy
+	irish += new.irish
+	badly_drawn += new.badly_drawn

@@ -3,11 +3,6 @@ extends Area2D
 
 @export var aesthetic: aesthetics_picker
 
-@onready
-var sprite = $image
-
-func add_accessory(accessory):
-	accessory.reparent(self)
 
 #current charm that is selected
 var focus_charm
@@ -19,14 +14,19 @@ func new_mask(m) -> void:
 	sprite.texture = m.sprite
 
 func _on_body_entered(body: Node2D) -> void:
-	#print("got something")
 	if body is RigidBody2D:
-		#print("picked up" + body.name)
 		focus_charm = body
 		focus_charm.over_mask = true
 
 func _on_body_exited(body: Node2D) -> void:
 	if body == focus_charm:
 		focus_charm.over_mask = false
-		print("dropped off" + body.name)
+		focus_charm = null
+
+func _process(_d):
+	if focus_charm and focus_charm.stuck:
+		focus_charm.reparent(self)
+		focus_charm.attach(self)
+		# add mask aesthetics to self
+		aesthetic.add(focus_charm.aesthetic)
 		focus_charm = null

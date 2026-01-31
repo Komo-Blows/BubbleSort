@@ -8,9 +8,9 @@
 script = ExtResource("1_75pro")
 techy = 0
 fishy = 0
-cutesy = 10
+cutesy = 0
 preppy = 0
-ugly = 0
+ugly = 5
 demonic = 0
 cowboy = 0
 irish = 0
@@ -19,7 +19,8 @@ metadata/_custom_type_script = "uid://blc2d1hrqqvph"
 
 [resource]
 script = ExtResource("1_mojgk")
-aesthetics = SubResource("Resource_k8d01")
+aesthetic = SubResource("Resource_k8d01")
+name = ""
 image = ExtResource("2_k8d01")
 image_scale = 0.6
 collision_radius = 50

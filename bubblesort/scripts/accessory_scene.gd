@@ -1,16 +1,14 @@
 extends RigidBody2D
-var aesthetic_values : Dictionary = {}
 
 @onready var sprite = $sprite
 @onready var collision = $collision
 
-
 @export var accessory : Accessory # filled by charm_bucket on instantiation
-
+@onready var aesthetic = accessory.aesthetic
 
 func _ready():
 	assert(accessory != null, "no accessory object assigned to scene!")
-	aesthetic_values = accessory.aesthetics.get_dict()
+	assert(aesthetic != null, "accessory not assigned an aesthetic")
 	sprite.texture = accessory.image
 	sprite.scale = Vector2(accessory.image_scale, accessory.image_scale)
 	name = accessory.name
@@ -22,12 +20,12 @@ var over_mask = false #updated by the mask area2d
 var stuck = false
 
 func _on_mouse_entered() -> void:
-	if !follow_mouse:
+	if !follow_mouse and not stuck:
 		mouse_over = true
 		sprite.scale *= Vector2(accessory.image_scale, accessory.image_scale)*1.5
 
 func _on_mouse_exited() -> void:
-	if !follow_mouse:
+	if !follow_mouse and not stuck:
 		mouse_over = false
 		sprite.scale = Vector2(accessory.image_scale, accessory.image_scale)
 
@@ -37,6 +35,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			set_collision_layer_value(2, true)
 			set_collision_mask_value(2, true)
 			follow_mouse = false
+			# check if attach to mask
+			if over_mask:
+				stuck = true
 		else:
 			set_collision_layer_value(2, false)
 			set_collision_mask_value(2, false)
@@ -50,9 +51,14 @@ func _process(_d) -> void:
 			angular_velocity = Input.get_axis('Q', 'E')*2
 		var mouse_direction = get_global_mouse_position() - global_position
 		linear_velocity = mouse_direction * follow_strength
-	if sprite.scale.x < 2:
-		if Input.is_action_pressed("W") and follow_mouse:
+		if sprite.scale.x < 2 and Input.is_action_pressed("W"):
 			sprite.scale *= 1.01
-	if sprite.scale.x > 0.5:
-		if Input.is_action_pressed("S") and follow_mouse:
+		if sprite.scale.x > 0.5 and Input.is_action_pressed("S"):
 			sprite.scale *= 0.99
+
+func attach(parent):
+	follow_mouse = false
+	freeze = true
+	sleeping = true
+	lock_rotation = true
+	
