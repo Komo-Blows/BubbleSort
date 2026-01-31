@@ -85,6 +85,8 @@ _data = {
 
 [node name="charm_bucket" type="RigidBody2D"]
 position = Vector2(-500, 600)
+collision_layer = 2
+collision_mask = 2
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_cfxgc")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://wl1o0cj7npw8"]
+
+[ext_resource type="Script" uid="uid://083rvljxf50p" path="res://scripts/mask.gd" id="1_nair6"]
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="2_xpdyg"]
+
+[sub_resource type="Resource" id="Resource_5sfjl"]
+script = ExtResource("2_xpdyg")
+techy = 0
+fishy = 0
+cutesy = 0
+preppy = 0
+ugly = 0
+demonic = 0
+cowboy = 0
+irish = 0
+badly_drawn = 0
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[node name="mask" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_nair6")
+aesthetic = SubResource("Resource_5sfjl")
+
+[node name="sprite" type="Sprite2D" parent="."]
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-125, -125)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
