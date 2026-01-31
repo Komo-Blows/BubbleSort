@@ -113,6 +113,3 @@ shape = SubResource("WorldBoundaryShape2D_kycxp")
 position = Vector2(1920, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_j287u")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.1, 0.1)

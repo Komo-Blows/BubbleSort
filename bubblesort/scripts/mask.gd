@@ -14,12 +14,11 @@ func _ready() -> void:
 func new_mask(mask_resource) -> void:
 	sprite.texture = mask_resource.image
 	await get_tree().create_timer(1).timeout
-	var sprite_image: Image = sprite.texture.get_image()
 	var bits = BitMap.new()
 	bits.create_from_image_alpha(mask_resource.image.get_image())
-	var tig_bitties := bits.opaque_to_polygons(sprite.get_rect(), 2.0)
-	collision.polygon = tig_bitties
-	print(collision.polygon)
+	var tig_bitties := bits.opaque_to_polygons(Rect2(Vector2(), bits.get_size()))
+	collision.polygon = tig_bitties[0]
+	collision.position = -mask_resource.image.get_image().get_size()/2
 	
 
 func _on_body_entered(body: Node2D) -> void:

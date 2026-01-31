@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://box21pfdjt213" path="res://sprites/sack_ASS.png" id="2_mqpyi"]
 
 [node name="charm_bucket" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_cfxgc")

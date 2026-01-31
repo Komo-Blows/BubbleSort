@@ -23,12 +23,9 @@ script = ExtResource("1_nair6")
 aesthetic = SubResource("Resource_5sfjl")
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(308.036, 240)
-scale = Vector2(3.99999, 3.17188)
 
 [node name="collision" type="CollisionPolygon2D" parent="."]
-position = Vector2(308.355, 233.497)
-scale = Vector2(4.03432, 3.30273)
+position = Vector2(-125, -125)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
