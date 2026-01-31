@@ -2,15 +2,8 @@
 extends Resource
 class_name Accessory
 
-#these represent the value of the accessory that youre adding
-@export var techy : int = 0
-@export var fishy : int = 0
-@export var cutesy : int = 0
-@export var preppy : int = 0
-@export var ugly : int = 0
-@export var demonic : int = 0
-@export var cowboy : int = 0
-@export var irish : int = 0
-@export var badly_drawn : int = 0
+@export var aesthetics: aesthetics_picker # see aesthetics_picker_resource.gd
 
 @export var image = Texture2D
+@export var image_scale: float = 1.0
+@export_range(10, 50) var collision_radius = 20

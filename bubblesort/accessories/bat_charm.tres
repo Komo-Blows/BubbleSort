@@ -2,17 +2,26 @@
 
 [ext_resource type="Texture2D" uid="uid://ujxblwu1bfen" path="res://sprites/cute_bat.png" id="1_etrmc"]
 [ext_resource type="Script" uid="uid://ct50su2tauap" path="res://accessory_resource.gd" id="1_onwt3"]
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://aesthetics_picker_resource.gd" id="1_qsq14"]
 
-[resource]
-script = ExtResource("1_onwt3")
+[sub_resource type="Resource" id="Resource_qsq14"]
+script = ExtResource("1_qsq14")
 techy = 0
 fishy = 0
 cutesy = 1
 preppy = 0
 ugly = 0
-demonic = 2
+demonic = 1
 cowboy = 0
 irish = 0
 badly_drawn = 1
+
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("1_onwt3")
+aesthetics = SubResource("Resource_qsq14")
 image = ExtResource("1_etrmc")
+image_scale = 1.0
+collision_radius = 50
 metadata/_custom_type_script = "uid://ct50su2tauap"
