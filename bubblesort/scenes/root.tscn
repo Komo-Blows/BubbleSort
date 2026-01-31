@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://kvbplsrjjkgn"]
+[gd_scene load_steps=6 format=3 uid="uid://kvbplsrjjkgn"]
 
 [ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://root.gd" id="1_pq8q7"]
 [ext_resource type="Script" uid="uid://083rvljxf50p" path="res://mask.gd" id="2_pyidc"]
-[ext_resource type="Texture2D" uid="uid://c2euiu4f7iy1e" path="res://icon.svg" id="2_vvh5c"]
+[ext_resource type="Texture2D" uid="uid://c2euiu4f7iy1e" path="res://sprites/icon.svg" id="2_vvh5c"]
 [ext_resource type="Script" uid="uid://yfpp1j1l45bv" path="res://mask_accessory.gd" id="4_28aoi"]
+[ext_resource type="PackedScene" uid="uid://5gbmbpge668w" path="res://scenes/character.tscn" id="5_jh1ax"]
 
 [node name="root" type="Node2D"]
 script = ExtResource("1_pq8q7")
@@ -14,7 +15,6 @@ scale = Vector2(1.67188, 1)
 script = ExtResource("2_pyidc")
 
 [node name="image" type="Sprite2D" parent="mask"]
-scale = Vector2(1, 1)
 texture = ExtResource("2_vvh5c")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="mask"]
@@ -22,3 +22,5 @@ polygon = PackedVector2Array(-1.19626, -63, 58.6168, -57, 64, -4, 59.8131, 59, 0
 
 [node name="mask_accessory" type="Sprite2D" parent="."]
 script = ExtResource("4_28aoi")
+
+[node name="character" parent="." instance=ExtResource("5_jh1ax")]
