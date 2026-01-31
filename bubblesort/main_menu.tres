@@ -1,3 +1,20 @@
-[gd_resource type="Theme" format=3 uid="uid://c8p03k0u8y5f4"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c8p03k0u8y5f4"]
+
+[ext_resource type="FontFile" uid="uid://cvy36cmppc64f" path="res://BLKCHCRY.TTF" id="1_u88ro"]
+[ext_resource type="Texture2D" uid="uid://bwsungdff7dij" path="res://sprites/button.png" id="2_s523i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brgj2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_277qh"]
+texture = ExtResource("2_s523i")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [resource]
+Button/fonts/font = ExtResource("1_u88ro")
+Button/styles/focus = SubResource("StyleBoxEmpty_brgj2")
+Button/styles/normal = SubResource("StyleBoxTexture_277qh")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("1_u88ro")

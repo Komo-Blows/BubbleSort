@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_liv6q")
-sprite = ExtResource("2_0nd1v")
+image = ExtResource("2_0nd1v")
 main_aesthetic = 0
 metadata/_custom_type_script = "uid://c6btc8e6vrdny"

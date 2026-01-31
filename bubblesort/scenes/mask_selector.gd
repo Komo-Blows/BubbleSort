@@ -5,6 +5,7 @@ var animator = $animator
 
 func enable():
 	visible = true
+	print(visible)
 	for child in grid_container.get_children():
 		#print("ratata")
 		child.rotation_degrees = 42.4

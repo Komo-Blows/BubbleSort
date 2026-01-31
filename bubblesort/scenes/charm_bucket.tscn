@@ -1,23 +1,107 @@
-[gd_scene load_steps=3 format=3 uid="uid://dggcaqhtyfigq"]
+[gd_scene load_steps=7 format=3 uid="uid://dggcaqhtyfigq"]
 
 [ext_resource type="Script" uid="uid://c4f5w41hoooke" path="res://scripts/charm_bucket.gd" id="1_cfxgc"]
 [ext_resource type="Texture2D" uid="uid://box21pfdjt213" path="res://sprites/sack_ASS.png" id="2_mqpyi"]
 
+[sub_resource type="Animation" id="Animation_mqpyi"]
+resource_name = "slide in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-500, 600), Vector2(300, 600)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"phase_in"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jt817"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-500, 600)]
+}
+
+[sub_resource type="Animation" id="Animation_l5equ"]
+resource_name = "slide out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.8, 1),
+"update": 0,
+"values": [Vector2(300, 600), Vector2(-500, 600)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"phase_out"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_655bu"]
+_data = {
+&"RESET": SubResource("Animation_jt817"),
+&"slide in": SubResource("Animation_mqpyi"),
+&"slide out": SubResource("Animation_l5equ")
+}
+
 [node name="charm_bucket" type="RigidBody2D"]
+position = Vector2(-500, 600)
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_cfxgc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(216, 478)
 scale = Vector2(12, 12)
 texture = ExtResource("2_mqpyi")
 
 [node name="spawnpoint" type="Marker2D" parent="."]
-position = Vector2(199, 510)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-217, -478)
+position = Vector2(-438, -957)
 scale = Vector2(2, 2)
 polygon = PackedVector2Array(169, 414, 121, 444, 94, 496, 101, 560, 146, 598, 258, 595, 334, 562, 337, 503, 280, 447, 228, 413, 198, 413, 200, 396, 361, 398, 362, 614, 59, 615, 70, 388, 192, 395, 192, 412)
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_655bu")
+}
