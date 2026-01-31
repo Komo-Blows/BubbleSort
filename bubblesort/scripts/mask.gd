@@ -15,13 +15,13 @@ var focus_charm
 func _ready() -> void:
 	Signals.connect("mask_shape_selected", new_mask)
 
-func new_mask() -> void:
-	sprite
+func new_mask(m) -> void:
+	sprite.texture = m.sprite
 
 func _on_body_entered(body: Node2D) -> void:
-	print("got something")
+	#print("got something")
 	if body is RigidBody2D:
-		print("picked up" + body.name)
+		#print("picked up" + body.name)
 		focus_charm = body
 		focus_charm.over_mask = true
 
