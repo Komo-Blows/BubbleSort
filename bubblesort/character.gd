@@ -9,8 +9,7 @@ var major_aesthetic : Globals.aesthetics
 var minor_aesthetic : Globals.aesthetics
 
 func update_character(char : character):
-	pass
-	#sprite.texture = char.image
+	sprite.texture = char.image
 	
 
 func _ready():
