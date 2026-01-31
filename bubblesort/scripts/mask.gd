@@ -38,3 +38,7 @@ func _process(_d):
 		# add mask aesthetics to self
 		aesthetic.add(focus_charm.aesthetic)
 		focus_charm = null
+
+func color(c:Color):
+	sprite.self_modulate = c
+	sprite.self_modulate.a = 1
