@@ -10,7 +10,6 @@ radius = 39.0128
 collision_layer = 3
 collision_mask = 3
 input_pickable = true
-freeze_mode = 1
 angular_damp = 3.571
 script = ExtResource("1_712mg")
 accessory = ExtResource("2_8mlyu")

@@ -7,19 +7,19 @@
 [sub_resource type="Resource" id="Resource_qsq14"]
 script = ExtResource("1_qsq14")
 techy = 0
-fishy = 0
+fishy = 1
 cutesy = 1
 preppy = 0
 ugly = 0
-demonic = 1
+demonic = 2
 cowboy = 0
 irish = 0
-badly_drawn = 1
+badly_drawn = 2
 metadata/_custom_type_script = "uid://blc2d1hrqqvph"
 
 [resource]
 script = ExtResource("1_onwt3")
-aesthetics = SubResource("Resource_qsq14")
+aesthetic = SubResource("Resource_qsq14")
 name = "bat charm"
 image = ExtResource("1_etrmc")
 image_scale = 1.0
