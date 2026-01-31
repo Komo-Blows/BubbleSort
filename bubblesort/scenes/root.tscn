@@ -80,9 +80,6 @@ _data = {
 [node name="root" type="Node2D"]
 script = ExtResource("1_pq8q7")
 
-[node name="mask" parent="." instance=ExtResource("2_jh1ax")]
-position = Vector2(2080, 232)
-
 [node name="character" parent="." instance=ExtResource("5_jh1ax")]
 position = Vector2(576, 324)
 
