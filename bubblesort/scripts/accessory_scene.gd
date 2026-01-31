@@ -18,6 +18,7 @@ func _ready():
 
 var mouse_over = false
 var follow_mouse = false
+var over_mask = false #updated by the mask area2d
 var stuck = false
 
 func _on_mouse_entered() -> void:
@@ -32,18 +33,21 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed('click') and mouse_over:
-		if !stuck:
-			follow_mouse = !follow_mouse
-			#freeze = follow_mouse
-	
+		if follow_mouse:
+			set_collision_layer_value(2, true)
+			set_collision_mask_value(2, true)
+			follow_mouse = false
+		else:
+			set_collision_layer_value(2, false)
+			set_collision_mask_value(2, false)
+			follow_mouse = true
 
-		
-
-var follow_strength = 10	
+const follow_strength = 10
 func _process(_d) -> void:
 	#print(mouse_over)
 	if follow_mouse:
-		rotation_degrees += Input.get_axis("Q", "E")*5
+		if Input.get_axis('A', 'D'):
+			angular_velocity = Input.get_axis('A', 'D')*2
 		var mouse_direction = get_global_mouse_position() - global_position
 		linear_velocity = mouse_direction * follow_strength
 	if sprite.scale.x < 2:
