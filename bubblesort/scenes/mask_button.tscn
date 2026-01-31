@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6c46bgskue1v"]
+
+[ext_resource type="Theme" uid="uid://bdry8mckxpe81" path="res://menu.tres" id="1_xtk6a"]
+
+[node name="mask_button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_xtk6a")

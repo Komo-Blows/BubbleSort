@@ -4,6 +4,8 @@ extends Node2D
 var child = $character
 @onready
 var animator = $AnimationPlayer
+@onready
+var mask_menu = $"mask selector"
 
 func place_mask():
 	#await Signals.next_character
@@ -11,6 +13,7 @@ func place_mask():
 	pass
 
 func new_character(delay : int = 2):
+	mask_menu.disable()
 	animator.play("slide out")
 	await animator.animation_finished
 	await get_tree().create_timer(delay).timeout

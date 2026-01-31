@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://3xhbadaqwj03"]
+
+[ext_resource type="Theme" uid="uid://bdry8mckxpe81" path="res://menu.tres" id="1_f77up"]
+[ext_resource type="Script" uid="uid://boee6ng8juq5j" path="res://scenes/mask_selector.gd" id="1_rev3u"]
+[ext_resource type="Script" uid="uid://dxehyowtinc3u" path="res://scripts/grid_container.gd" id="2_tqb7k"]
+
+[node name="mask selector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rev3u")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_right = 1821.0
+offset_bottom = 409.0
+theme = ExtResource("1_f77up")
+columns = 4
+script = ExtResource("2_tqb7k")
