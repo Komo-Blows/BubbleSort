@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://mtgauo2s5uy0"]
+
+[ext_resource type="Script" uid="uid://c4f5w41hoooke" path="res://charm_bucket.gd" id="1_cfxgc"]
+
+[node name="charm_bucket" type="RigidBody2D"]
+freeze = true
+script = ExtResource("1_cfxgc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(66, 399, 132, 599, 307, 599, 376, 395, 402, 394, 375, 660, 44, 662, 36, 395)
