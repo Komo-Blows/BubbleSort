@@ -46,8 +46,8 @@ const follow_strength = 10
 func _process(_d) -> void:
 	#print(mouse_over)
 	if follow_mouse:
-		if Input.get_axis('A', 'D'):
-			angular_velocity = Input.get_axis('A', 'D')*2
+		if Input.get_axis('Q', 'E'):
+			angular_velocity = Input.get_axis('Q', 'E')*2
 		var mouse_direction = get_global_mouse_position() - global_position
 		linear_velocity = mouse_direction * follow_strength
 	if sprite.scale.x < 2:
