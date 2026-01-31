@@ -4,8 +4,10 @@
 [ext_resource type="Resource" uid="uid://6o66abw1qvi2" path="res://accessories/bat_charm.tres" id="2_8mlyu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mlyu"]
+radius = 39.0128
 
 [node name="accessory_scene" type="RigidBody2D"]
+input_pickable = true
 freeze_mode = 1
 script = ExtResource("1_712mg")
 accessory = ExtResource("2_8mlyu")

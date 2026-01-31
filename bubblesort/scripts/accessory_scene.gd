@@ -1,5 +1,4 @@
-extends Node2D
-
+extends RigidBody2D
 var aesthetic_values : Dictionary = {}
 
 @onready var sprite = $sprite
@@ -32,7 +31,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		follow_mouse = false
 
 func _process(_d) -> void:
-	#print(mouse_over)
+	print(mouse_over)
 	if follow_mouse:
 		rotation = 0
 		self.freeze = true
