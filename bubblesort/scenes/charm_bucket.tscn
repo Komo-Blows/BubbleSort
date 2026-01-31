@@ -1,11 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://mtgauo2s5uy0"]
+[gd_scene load_steps=3 format=3 uid="uid://dggcaqhtyfigq"]
 
 [ext_resource type="Script" uid="uid://c4f5w41hoooke" path="res://charm_bucket.gd" id="1_cfxgc"]
+[ext_resource type="Texture2D" uid="uid://box21pfdjt213" path="res://sprites/sack_ASS.png" id="2_mqpyi"]
 
 [node name="charm_bucket" type="RigidBody2D"]
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_cfxgc")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(216, 478)
+scale = Vector2(12, 12)
+texture = ExtResource("2_mqpyi")
+
+[node name="spawnpoint" type="Marker2D" parent="."]
+position = Vector2(199, 510)
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(66, 399, 132, 599, 307, 599, 376, 395, 402, 394, 375, 660, 44, 662, 36, 395)
+position = Vector2(-217, -478)
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(169, 414, 121, 444, 94, 496, 101, 560, 146, 598, 258, 595, 334, 562, 337, 503, 280, 447, 228, 413, 198, 413, 200, 396, 361, 398, 362, 614, 59, 615, 70, 388, 192, 395, 192, 412)
