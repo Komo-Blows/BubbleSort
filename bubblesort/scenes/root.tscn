@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://kvbplsrjjkgn"]
+[gd_scene load_steps=12 format=3 uid="uid://kvbplsrjjkgn"]
 
 [ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://scripts/root.gd" id="1_pq8q7"]
-[ext_resource type="PackedScene" uid="uid://wl1o0cj7npw8" path="res://scenes/mask.tscn" id="2_jh1ax"]
 [ext_resource type="PackedScene" uid="uid://dggcaqhtyfigq" path="res://scenes/charm_bucket.tscn" id="5_j287u"]
 [ext_resource type="PackedScene" uid="uid://5gbmbpge668w" path="res://scenes/character.tscn" id="5_jh1ax"]
-[ext_resource type="PackedScene" path="res://scenes/mask_selector.tscn" id="6_kycxp"]
+[ext_resource type="PackedScene" uid="uid://3xhbadaqwj03" path="res://scenes/mask_selector.tscn" id="6_kycxp"]
 
 [sub_resource type="Animation" id="Animation_kycxp"]
 length = 0.001
@@ -81,9 +80,6 @@ _data = {
 [node name="root" type="Node2D"]
 script = ExtResource("1_pq8q7")
 
-[node name="mask" parent="." instance=ExtResource("2_jh1ax")]
-position = Vector2(715, 285)
-
 [node name="character" parent="." instance=ExtResource("5_jh1ax")]
 position = Vector2(576, 324)
 
@@ -117,3 +113,6 @@ shape = SubResource("WorldBoundaryShape2D_kycxp")
 position = Vector2(1920, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_j287u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)

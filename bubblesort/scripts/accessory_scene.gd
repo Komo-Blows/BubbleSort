@@ -1,3 +1,4 @@
+class_name AccessoryScene
 extends RigidBody2D
 
 @onready var sprite = $sprite
