@@ -31,13 +31,13 @@ func _ready():
 		if i >= 10: # ten charms only
 			break
 	
-	var mask_scene = preload('res://scenes/mask_scene.tscn')
-	var mask_resource = load('res://masks/mask_1.tres')
-	var mask = mask_scene.instantiate()
-	add_child(mask)
-	mask.new_mask(mask_resource)
-	mask.position += Vector2(1000, 1000)
-	mask.scale = Vector2(2, 2)
+	#var mask_scene = preload('res://scenes/mask_scene.tscn')
+	#var mask_resource = load('res://masks/trad_mask.tres')
+	#var mask = mask_scene.instantiate()
+	#add_child(mask)
+	#mask.new_mask(mask_resource)
+	#mask.position += Vector2(1000, 1000)
+	#mask.scale = Vector2(2, 2)
 	await get_tree().create_timer(1).timeout
 	new_character()
 
