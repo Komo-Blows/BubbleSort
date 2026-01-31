@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://kvbplsrjjkgn"]
+[gd_scene load_steps=6 format=3 uid="uid://kvbplsrjjkgn"]
 
 [ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://root.gd" id="1_pq8q7"]
+[ext_resource type="Script" uid="uid://083rvljxf50p" path="res://mask.gd" id="2_pyidc"]
+[ext_resource type="Texture2D" uid="uid://c2euiu4f7iy1e" path="res://icon.svg" id="2_vvh5c"]
+[ext_resource type="Script" uid="uid://yfpp1j1l45bv" path="res://mask_accessory.gd" id="4_28aoi"]
+
+[sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_28aoi"]
 
 [node name="root" type="Node2D"]
 script = ExtResource("1_pq8q7")
+
+[node name="mask" type="Area2D" parent="."]
+position = Vector2(552, 306)
+scale = Vector2(1.67188, 1)
+
+[node name="image" type="Sprite2D" parent="mask"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_vvh5c")
+script = ExtResource("2_pyidc")
+
+[node name="shape" type="CollisionShape2D" parent="mask"]
+shape = SubResource("ConcavePolygonShape2D_28aoi")
+
+[node name="mask_accessory" type="Sprite2D" parent="."]
+script = ExtResource("4_28aoi")
