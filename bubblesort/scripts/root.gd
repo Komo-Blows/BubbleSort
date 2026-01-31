@@ -22,10 +22,14 @@ func new_character(delay : int = 2):
 var charm_folder = 'res://accessories/'
 func _ready():
 	# initialize Charms
+	var i = 0
 	var files = DirAccess.get_files_at(charm_folder)
 	for file in files:
+		i += 1
 		var charm_resource = load(charm_folder + file)
 		$charm_bucket.add_charm(charm_resource)
+		if i >= 10: # ten charms only
+			break
 
 	await get_tree().create_timer(1).timeout
 	new_character()
