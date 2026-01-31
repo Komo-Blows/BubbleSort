@@ -1,8 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://3xhbadaqwj03"]
+[gd_scene load_steps=7 format=3 uid="uid://3xhbadaqwj03"]
 
 [ext_resource type="Theme" uid="uid://bdry8mckxpe81" path="res://menu.tres" id="1_f77up"]
 [ext_resource type="Script" uid="uid://boee6ng8juq5j" path="res://scenes/mask_selector.gd" id="1_rev3u"]
 [ext_resource type="Script" uid="uid://dxehyowtinc3u" path="res://scripts/grid_container.gd" id="2_tqb7k"]
+
+[sub_resource type="Animation" id="Animation_s2n83"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GridContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(99, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rev3u"]
+resource_name = "slide_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GridContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2000, 0), Vector2(99, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nv661"]
+_data = {
+&"RESET": SubResource("Animation_s2n83"),
+&"slide_in": SubResource("Animation_rev3u")
+}
 
 [node name="mask selector" type="Control"]
 layout_mode = 3
@@ -21,3 +58,8 @@ offset_bottom = 409.0
 theme = ExtResource("1_f77up")
 columns = 4
 script = ExtResource("2_tqb7k")
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nv661")
+}

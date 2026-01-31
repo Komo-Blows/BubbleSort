@@ -39,7 +39,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 		
 
-var follow_strength = 10	
+var follow_strength = 10
 func _process(_d) -> void:
 	#print(mouse_over)
 	if follow_mouse:
