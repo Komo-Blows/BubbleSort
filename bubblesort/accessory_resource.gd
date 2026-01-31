@@ -14,3 +14,4 @@ class_name Accessory
 @export var badly_drawn : int = 0
 
 @export var image = Texture2D
+@export_range(10, 50) var collision_radius = 20

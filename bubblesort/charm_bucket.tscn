@@ -4,6 +4,7 @@
 
 [node name="charm_bucket" type="RigidBody2D"]
 freeze = true
+freeze_mode = 1
 script = ExtResource("1_cfxgc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
