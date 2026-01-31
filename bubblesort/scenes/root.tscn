@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://kvbplsrjjkgn"]
 
-[ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://root.gd" id="1_pq8q7"]
-[ext_resource type="Script" uid="uid://083rvljxf50p" path="res://mask.gd" id="2_pyidc"]
+[ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://scripts/root.gd" id="1_pq8q7"]
+[ext_resource type="Script" uid="uid://083rvljxf50p" path="res://scripts/mask.gd" id="2_pyidc"]
 [ext_resource type="Texture2D" uid="uid://c2euiu4f7iy1e" path="res://sprites/icon.svg" id="2_vvh5c"]
 [ext_resource type="PackedScene" uid="uid://dggcaqhtyfigq" path="res://scenes/charm_bucket.tscn" id="5_j287u"]
 [ext_resource type="PackedScene" uid="uid://5gbmbpge668w" path="res://scenes/character.tscn" id="5_jh1ax"]

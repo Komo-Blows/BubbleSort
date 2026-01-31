@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dggcaqhtyfigq"]
 
-[ext_resource type="Script" uid="uid://c4f5w41hoooke" path="res://charm_bucket.gd" id="1_cfxgc"]
+[ext_resource type="Script" uid="uid://c4f5w41hoooke" path="res://scripts/charm_bucket.gd" id="1_cfxgc"]
 [ext_resource type="Texture2D" uid="uid://box21pfdjt213" path="res://sprites/sack_ASS.png" id="2_mqpyi"]
 
 [node name="charm_bucket" type="RigidBody2D"]
