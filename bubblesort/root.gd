@@ -5,10 +5,22 @@ var child = $character
 @onready
 var animator = $AnimationPlayer
 
-func new_character():
-	animator.play("slide in")
+func place_mask():
+	#await Signals.next_character
+	new_character()
+	pass
+
+func new_character(delay : int = 2):
+	animator.play("slide out")
+	await animator.animation_finished
+	await get_tree().create_timer(delay).timeout
 	child.update()
+	animator.play("slide in")
 
 func _ready() -> void:
-	await get_tree().create_timer(1).timeout
+	
 	new_character()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("space"):
+		place_mask()
