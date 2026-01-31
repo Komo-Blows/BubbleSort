@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MoBamba" load_steps=2 format=3 uid="uid://c887nqokp6vjn"]
+
+[ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://character_resource.gd" id="1_b63hk"]
+
+[resource]
+script = ExtResource("1_b63hk")
+major = 0
+minor = 2
+metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"
