@@ -13,4 +13,17 @@ var badly_drawn : int = 0
 
 func add_accessory(accessory):
 	self.reparent(accessory)
-	
+
+#current charm that is selected
+var focus_charm
+
+func _on_body_entered(body: Node2D) -> void:
+	print("got something")
+	if body is RigidBody2D:
+		print("picked up" + body.name)
+		focus_charm = body
+
+func _on_body_exited(body: Node2D) -> void:
+	if body == focus_charm:
+		print("dropped off" + body.name)
+		focus_charm = null

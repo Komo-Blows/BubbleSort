@@ -20,6 +20,7 @@ metadata/_custom_type_script = "uid://blc2d1hrqqvph"
 [resource]
 script = ExtResource("1_onwt3")
 aesthetics = SubResource("Resource_qsq14")
+name = "bat charm"
 image = ExtResource("1_etrmc")
 image_scale = 1.0
 collision_radius = 50
