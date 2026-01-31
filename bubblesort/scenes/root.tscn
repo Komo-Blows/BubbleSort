@@ -20,7 +20,7 @@ texture = ExtResource("2_vvh5c")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="mask"]
 polygon = PackedVector2Array(-1.19626, -63, 58.6168, -57, 64, -4, 59.8131, 59, 0, 65, -59.2149, 59, -63.4019, 0, -60.4112, -56)
 
-[node name="mask_accessory" type="Sprite2D" parent="."]
+[node name="mask_accessory" type="Area2D" parent="."]
 script = ExtResource("4_28aoi")
 
 [node name="character" parent="." instance=ExtResource("5_jh1ax")]
