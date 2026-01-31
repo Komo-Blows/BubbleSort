@@ -6,3 +6,5 @@
 [node name="accessory_scene" type="Node2D"]
 script = ExtResource("1_712mg")
 accessory = ExtResource("2_8mlyu")
+
+[node name="sprite" type="Sprite2D" parent="."]
