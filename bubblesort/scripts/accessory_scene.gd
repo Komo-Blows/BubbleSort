@@ -18,22 +18,22 @@ var follow_mouse = false
 
 func _on_mouse_entered() -> void:
 	mouse_over = true
-	sprite.scale = accessory.image_scale * 1.5
+	sprite.scale *= Vector2(accessory.image_scale, accessory.image_scale)*1.5
 
 func _on_mouse_exited() -> void:
 	mouse_over = false
-	sprite.scale = accessory.image_scale
+	sprite.scale = Vector2(accessory.image_scale, accessory.image_scale)
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed('click') and mouse_over:
-		follow_mouse = true
-	if event.is_action_released('click'):
-		follow_mouse = false
+		follow_mouse = !follow_mouse
+		self.freeze = false
 
+var follow_strength = 10
 func _process(_d) -> void:
 	print(mouse_over)
 	if follow_mouse:
 		rotation = 0
-		self.freeze = true
-		global_position = get_global_mouse_position()
+		var mouse_direction = get_global_mouse_position() - global_position
+		linear_velocity = mouse_direction * follow_strength
 		
