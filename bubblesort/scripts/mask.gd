@@ -1,11 +1,17 @@
 extends Area2D
-class_name mask
+#class_name mask
 
 @export var aesthetic: aesthetics_picker
 
 
 #current charm that is selected
 var focus_charm
+
+func _ready() -> void:
+	Signals.connect("mask_shape_selected", new_mask)
+
+func new_mask(m) -> void:
+	sprite.texture = m.sprite
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:

@@ -13,7 +13,6 @@ func place_mask():
 	pass
 
 func new_character(delay : int = 2):
-	mask_menu.disable()
 	animator.play("slide out")
 	await animator.animation_finished
 	await get_tree().create_timer(delay).timeout
