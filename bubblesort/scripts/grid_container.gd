@@ -13,7 +13,7 @@ func _ready() -> void:
 	
 	for m in mask_objects:
 		var b: Button = button_scene.instantiate()
-		b.icon = m.sprite
+		b.icon = m.image
 		b.mask_object = m
 		b.rotation_degrees = 42.4
 		self.add_child(b)

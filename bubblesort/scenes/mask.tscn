@@ -24,9 +24,9 @@ collision_mask = 3
 script = ExtResource("1_0d8jk")
 aesthetic = SubResource("Resource_5sfjl")
 
-[node name="image" type="Sprite2D" parent="."]
-position = Vector2(547.886, 368)
-scale = Vector2(5.83176, 4.54688)
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(308.036, 240)
+scale = Vector2(3.99999, 3.17188)
 texture = ExtResource("3_uscli")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
