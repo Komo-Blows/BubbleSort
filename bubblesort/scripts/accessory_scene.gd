@@ -31,7 +31,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 var follow_strength = 10
 func _process(_d) -> void:
-	print(mouse_over)
+	#print(mouse_over)
 	if follow_mouse:
 		rotation = 0
 		var mouse_direction = get_global_mouse_position() - global_position
