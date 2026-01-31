@@ -43,7 +43,7 @@ var follow_strength = 10
 func _process(_d) -> void:
 	#print(mouse_over)
 	if follow_mouse:
-		rotation = 0
+		rotation_degrees += Input.get_axis("Q", "E")*5
 		var mouse_direction = get_global_mouse_position() - global_position
 		linear_velocity = mouse_direction * follow_strength
 	if sprite.scale.x < 2:
