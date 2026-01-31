@@ -4,4 +4,4 @@ extends Resource
 
 @export var major: Globals.aesthetics
 @export var minor: Globals.aesthetics
-@export var image: Image
+@export var image: Texture2D
