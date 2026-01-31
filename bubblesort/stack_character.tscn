@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dffwjhfqlla1b"]
+
+[ext_resource type="Script" uid="uid://c52lctrjavgot" path="res://stack_character.gd" id="1_4atp6"]
+[ext_resource type="Texture2D" uid="uid://c2euiu4f7iy1e" path="res://sprites/icon.svg" id="2_xy1vg"]
+
+[node name="StackCharacter" type="Node2D"]
+script = ExtResource("1_4atp6")
+sprite_texture = ExtResource("2_xy1vg")
+
+[node name="CharacterSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_xy1vg")
+
+[node name="MaskSlot" type="Node2D" parent="."]
+
+[node name="NameLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
