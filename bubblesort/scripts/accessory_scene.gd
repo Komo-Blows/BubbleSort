@@ -3,6 +3,7 @@ extends RigidBody2D
 
 @onready var sprite = $sprite
 @onready var collision = $collision
+@onready var timer = $info_timer
 
 @export var accessory : Accessory # filled by charm_bucket on instantiation
 @onready var aesthetic = accessory.aesthetic
@@ -22,11 +23,14 @@ var stuck = false
 
 func _on_mouse_entered() -> void:
 	if !follow_mouse and not stuck:
+		timer.start()
+		print("inflating")
 		mouse_over = true
 		sprite.scale *= Vector2(accessory.image_scale, accessory.image_scale)*1.5
 
 func _on_mouse_exited() -> void:
 	if !follow_mouse and not stuck:
+		timer.stop()
 		mouse_over = false
 		sprite.scale = Vector2(accessory.image_scale, accessory.image_scale)
 
@@ -62,4 +66,6 @@ func attach(parent):
 	freeze = true
 	sleeping = true
 	lock_rotation = true
+
+func display_info():
 	
