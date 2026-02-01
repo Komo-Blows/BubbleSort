@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://75fp6estpqeh"]
+[gd_scene load_steps=6 format=3 uid="uid://75fp6estpqeh"]
 
 [ext_resource type="Texture2D" uid="uid://ctc3277cu5dq2" path="res://screenshots/screenshot_2026-01-31_20_57_47.png" id="1_70uwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70uwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdrnn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bx8oh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bp75t"]
 
 [node name="photo_gallery_button" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
 scale = Vector2(0.25, 0.25)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_70uwf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bdrnn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bx8oh")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bp75t")
 icon = ExtResource("1_70uwf")
