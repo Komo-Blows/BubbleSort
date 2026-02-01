@@ -32,7 +32,7 @@ var stuck = false
 func _on_mouse_entered() -> void:
 	if !follow_mouse and not stuck:
 		timer.start()
-		print("inflating")
+		#print("inflating")
 		mouse_over = true
 		sprite.scale *= Vector2(accessory.image_scale, accessory.image_scale)*1.5
 
