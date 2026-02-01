@@ -93,3 +93,12 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_qyy8h")
 volume_db = 9.905
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 989.0
+offset_right = 169.0
+offset_bottom = 1012.0
+scale = Vector2(2.20874, 2.86628)
+text = "Select a mask!"

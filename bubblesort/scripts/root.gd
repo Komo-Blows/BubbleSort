@@ -14,7 +14,7 @@ func new_character(delay : int = 2):
 	animator.play("slide out")
 	await animator.animation_finished
 	await get_tree().create_timer(delay).timeout
-	child.update()
+	child.update(preload('res://characters/cutesy.tres'))
 	animator.play("slide in")
 
 var charm_folder = 'res://accessories/'

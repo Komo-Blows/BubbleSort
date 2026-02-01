@@ -28,16 +28,15 @@ func _ready():
 			characters.append(file)
 	assert(!characters.is_empty(), "no characters to load")
 	
-	update_character(current_character)
-
 @onready
 var audio = $AudioStreamPlayer2D
-func update():
-	while true:
+func update(force_character = null):
+	if force_character:
+		current_character = force_character
+	else:
 		current_character = characters.pick_random()
-		if !recent_characters.has(current_character):
-			break
-	print(recent_characters)
+		if recent_characters.has(current_character):
+			assert(false, 'current in recent')
 	recent_characters.append(current_character)
 	update_character(current_character)
 	
