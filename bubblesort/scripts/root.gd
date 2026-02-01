@@ -9,6 +9,14 @@ var mask_menu = $"mask selector"
 
 var current_mask: MaskScene = null
 var points := 0
+@export var quota: int = 1
+@export var day: int = 0
+var points_dict: Dictionary[CharacterHandler.SatisfactionLevel, int] = {
+	CharacterHandler.SatisfactionLevel.CHOPPED: -1,
+	CharacterHandler.SatisfactionLevel.UPSET: 0,
+	CharacterHandler.SatisfactionLevel.MEH: 1,
+	CharacterHandler.SatisfactionLevel.HAPPY: 3
+}
 
 func new_character(delay : int = 2):
 	animator.play("slide out")
@@ -66,7 +74,12 @@ func take_screenshot() -> void:
 func color_mask(c: Color): 
 	if current_mask: 
 		current_mask.color(c)
+		
+## Given the current day and current quota, calculates the next quota.
+func calculate_next_quota() -> int:
+	return self.quota + 1
 
-func update_points(number):
-	points = number
-	$Points.text = 'Happiness Points: ' + str(points)
+## Given the day, current amount of points, and a quota updates the points label.
+func update_points(new_day: int, new_points: int, new_quota: int):
+	$Points.text = 	"Day: {}, Points/Quota: {}".format([ \
+	str(new_day), str(new_points), str(new_quota)], "{}")
