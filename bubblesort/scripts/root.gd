@@ -12,9 +12,9 @@ var current_mask: MaskScene = null
 @export var daily_attempts: int = 5
 var attempt_count:int = 0
 var points := 0
-var day: int = 0
+var day: int = 1
 var points_dict: Dictionary[CharacterHandler.SatisfactionLevel, int] = {
-	CharacterHandler.SatisfactionLevel.CHOPPED: 0,
+	CharacterHandler.SatisfactionLevel.CHOPPED: 1,
 	CharacterHandler.SatisfactionLevel.UPSET: 1,
 	CharacterHandler.SatisfactionLevel.MEH: 2,
 	CharacterHandler.SatisfactionLevel.HAPPY: 3
@@ -44,7 +44,7 @@ func _ready():
 		if i >= 10: # ten charms only
 			break
 	new_character()
-	update_points(day, points, quota)
+	update_label(day, points, quota)
 	new_character(preload('res://characters/cutesy.tres'))
 
 @onready
@@ -85,7 +85,7 @@ func calculate_next_quota() -> int:
 	return self.quota + 1
 
 ## Given the day, current amount of points, and a quota updates the points label.
-func update_points(new_day: int, new_points: int, new_quota: int):
+func update_label(new_day: int, new_points: int, new_quota: int):
 	self.day = new_day
 	self.points = new_points
 	self.quota = new_quota
@@ -99,20 +99,19 @@ func calculate_next_daily_attempts() -> int:
 ## Handles the space bar action
 func handle_spacebar() -> void:
 	await child.take_mask(current_mask).finished #Creates a reaction, and lets it finish.
+	self.update_label(self.day, \
+	self.points + self.points_dict[child.calculate_reaction(current_mask)], self.quota)
+	self.attempt_count += 1
 	# Check if the day is over.
 	if self.attempt_count >= self.daily_attempts:
 		if self.points >= self.quota:
-			self.daily_attemps = calculate_next_daily_attempts() # hidden from user.
-			self.update_points(self.day, 0, calculate_next_quota())
+			self.daily_attempts = calculate_next_daily_attempts() # hidden from user.
+			self.attempt_count = 0		
+			self.update_label(self.day + 1, 0, calculate_next_quota())
 		else:
 			self.game_over = true
 	if !self.game_over:
-		print(self.attempt_count)
-		print(self.game_over)
-		self.attempt_count += 1
-		self.points += self.points_dict[child.calculate_reaction(current_mask)]
 		new_character()
-	else:
-		print("Game over?")
+	elif self.game_over:
 		$Points.text = "GAME OVER"
 		#TODO: prolly something else happens
