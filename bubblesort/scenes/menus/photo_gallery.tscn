@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1jt74004b7ch"]
+[gd_scene load_steps=9 format=3 uid="uid://b1jt74004b7ch"]
 
 [ext_resource type="Script" uid="uid://dhmxlyuj4hnp2" path="res://photo_gallery.gd" id="1_2ovol"]
 [ext_resource type="Texture2D" uid="uid://byws16m6bma41" path="res://sprites/Sprite-0012.png" id="2_h6h01"]
+[ext_resource type="Texture2D" uid="uid://cdw2alltwj0dn" path="res://sprites/arrow (1).png" id="3_ttm15"]
+[ext_resource type="FontFile" uid="uid://cvy36cmppc64f" path="res://BLKCHCRY.TTF" id="4_v6fvk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ji8y3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nybul"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2un4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yidms"]
 
 [node name="photo_gallery" type="Control"]
 layout_mode = 3
@@ -21,3 +31,55 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 columns = 4
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1656.0
+offset_top = 884.0
+offset_right = 2156.0
+offset_bottom = 1284.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ji8y3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nybul")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n2un4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yidms")
+icon = ExtResource("3_ttm15")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = -566.0
+offset_top = 24.0
+offset_right = -56.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_v6fvk")
+theme_override_font_sizes/font_size = 256
+text = "Next"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 879.0
+offset_right = 788.0
+offset_bottom = 1279.0
+scale = Vector2(-0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ji8y3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nybul")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n2un4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yidms")
+icon = ExtResource("3_ttm15")
+
+[node name="Label2" type="Label" parent="Button2"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = 38.0
+offset_right = 466.0
+offset_bottom = 359.0
+scale = Vector2(-1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_v6fvk")
+theme_override_font_sizes/font_size = 256
+text = "Menu"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]

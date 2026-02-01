@@ -31,7 +31,6 @@ func update():
 	print("new character incoming!")
 	while true:
 		current_character = characters.pick_random()
-		
 		if !recent_characters.has(current_character):
 			break
 	print(recent_characters)
