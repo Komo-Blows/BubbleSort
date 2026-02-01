@@ -24,3 +24,6 @@ func _ready() -> void:
 
 @onready
 var grid_container = $GridContainer
+
+func add_mask(mask):
+	$GridContainer.add_child(mask)
