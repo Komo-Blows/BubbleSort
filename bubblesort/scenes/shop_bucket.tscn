@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cphjrol163p6d"]
+
+[ext_resource type="Script" uid="uid://ddnjppof85i1f" path="res://scenes/shop_bucket.gd" id="1_seuls"]
+[ext_resource type="Texture2D" uid="uid://cv08c6p1kcfsn" path="res://sprites/sack_goated.png" id="2_tp5b2"]
+[ext_resource type="Texture2D" uid="uid://csbrqhjdckfsq" path="res://sprites/charm_instruction.png" id="3_peg4m"]
+
+[node name="charm_bucket" type="RigidBody2D"]
+position = Vector2(291, 608)
+collision_layer = 2
+collision_mask = 2
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_seuls")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(59, -70)
+scale = Vector2(-0.7, 0.7)
+texture = ExtResource("2_tp5b2")
+
+[node name="spawnpoint" type="Marker2D" parent="."]
+position = Vector2(150, -58)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(605, -1019)
+scale = Vector2(-2, 2)
+polygon = PackedVector2Array(117, 353.5, 96.5, 457, 84, 559, 124, 637, 186, 654, 266.5, 623, 334, 562, 324, 501.5, 345.5, 418, 329.5, 377.5, 216, 337.5, 211.5, 336, 211.5, 316.5, 367.5, 331.5, 347, 526.5, 338.5, 598, 256, 656.5, 139, 670.5, 84, 614, 46, 596.5, 34.5, 476, 69, 458, 66.5, 388, 90, 336.5, 160, 305, 208, 311, 208, 336)
+
+[node name="CharmInstruction" type="Sprite2D" parent="."]
+position = Vector2(592, 44)
+scale = Vector2(0.518809, 0.518809)
+texture = ExtResource("3_peg4m")

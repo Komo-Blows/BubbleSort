@@ -8,6 +8,8 @@ extends RigidBody2D
 @export var accessory : Accessory # filled by charm_bucket on instantiation
 @onready var aesthetic = accessory.aesthetic
 
+var purchasable := false
+
 func _ready():
 	top_level = true
 	assert(accessory != null, "no accessory object assigned to scene!")
@@ -58,6 +60,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				stuck = true
 				Signals.showhide_instructions.emit(false)
 		else:
+			if purchasable == true:
+				purchasable = false
 			hide_info()
 			play(fabric_sfx)
 			Signals.showhide_instructions.emit(true)
