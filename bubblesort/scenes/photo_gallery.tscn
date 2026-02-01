@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1jt74004b7ch"]
+
+[ext_resource type="Script" uid="uid://dhmxlyuj4hnp2" path="res://photo_gallery.gd" id="1_2ovol"]
+
+[node name="photo_gallery" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ovol")
+
+[node name="background" type="Sprite2D" parent="."]
+
+[node name="photo_grid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 4

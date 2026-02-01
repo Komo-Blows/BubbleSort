@@ -43,4 +43,16 @@ func select_mask(resource): # connected as signal to mask_shape_selected
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
 		new_character()
+	if Input.is_action_just_pressed("screenshot"):
+		take_screenshot()
 	#$Camera2D.zoom += Vector2(0.001, 0.001)
+
+
+func take_screenshot() -> void:
+	var viewport_texture: ViewportTexture = get_viewport().get_texture()
+	var image: Image = viewport_texture.get_image()
+	var date_str: String = Time.get_date_string_from_system().replace(".", "_")
+	var time_str: String = Time.get_time_string_from_system().replace(":", "_")
+	var screenshot_path: String = "res://screenshots/screenshot_" + date_str + "_" + time_str + ".png"
+	image.save_png(screenshot_path)
+	print("Screenshot saved to: " + screenshot_path)

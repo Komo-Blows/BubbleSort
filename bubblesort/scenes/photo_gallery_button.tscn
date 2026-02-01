@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://75fp6estpqeh"]
+
+[ext_resource type="Texture2D" uid="uid://ctc3277cu5dq2" path="res://screenshots/screenshot_2026-01-31_20_57_47.png" id="1_70uwf"]
+
+[node name="photo_gallery_button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.25, 0.25)
+icon = ExtResource("1_70uwf")
