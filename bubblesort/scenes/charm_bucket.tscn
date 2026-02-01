@@ -94,15 +94,16 @@ script = ExtResource("1_cfxgc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(105, -14)
-scale = Vector2(0.7, 0.7)
+position = Vector2(59, -70)
+scale = Vector2(-0.7, 0.7)
 texture = ExtResource("2_jt817")
 
 [node name="spawnpoint" type="Marker2D" parent="."]
+position = Vector2(150, -58)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-438, -957)
-scale = Vector2(2, 2)
+position = Vector2(605, -1019)
+scale = Vector2(-2, 2)
 polygon = PackedVector2Array(117, 353.5, 96.5, 457, 84, 559, 124, 637, 186, 654, 266.5, 623, 334, 562, 324, 501.5, 345.5, 418, 329.5, 377.5, 216, 337.5, 211.5, 336, 211.5, 316.5, 367.5, 331.5, 347, 526.5, 338.5, 598, 256, 656.5, 139, 670.5, 84, 614, 46, 596.5, 34.5, 476, 69, 458, 66.5, 388, 90, 336.5, 160, 305, 208, 311, 208, 336)
 
 [node name="animator" type="AnimationPlayer" parent="."]
