@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://ddge8wp3paf5a"]
+
+[ext_resource type="Texture2D" uid="uid://flyib2t1miws" path="res://sprites/characters/irish_demonic.png" id="1_e7cr4"]
+[ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="2_1blcp"]
+
+[resource]
+script = ExtResource("2_1blcp")
+major = 7
+minor = 5
+image = ExtResource("1_e7cr4")
+metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

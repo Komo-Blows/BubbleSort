@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://cjw4ycxrlb51q"]
+
+[ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_8nmxr"]
+[ext_resource type="Texture2D" uid="uid://bi8jyprqmigfl" path="res://sprites/characters/ugly_techy(unity_glaze).png" id="1_x33tv"]
+
+[resource]
+script = ExtResource("1_8nmxr")
+major = 4
+minor = 0
+image = ExtResource("1_x33tv")
+metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"
