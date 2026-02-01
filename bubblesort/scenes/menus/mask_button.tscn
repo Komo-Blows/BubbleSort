@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6c46bgskue1v"]
+[gd_scene load_steps=10 format=3 uid="uid://c6c46bgskue1v"]
 
 [ext_resource type="Theme" uid="uid://bdry8mckxpe81" path="res://menu.tres" id="1_5qv7i"]
 [ext_resource type="Texture2D" uid="uid://d38wps0mh4nce" path="res://sprites/masks/mask_1.png" id="2_vlogf"]
 [ext_resource type="Script" uid="uid://b8i8u4w2dmrxv" path="res://scenes/mask_button.gd" id="3_hpv7w"]
 [ext_resource type="AudioStream" uid="uid://bm4igs56d2l0u" path="res://audio/click_mask.wav" id="4_vlogf"]
+[ext_resource type="Theme" uid="uid://c8p03k0u8y5f4" path="res://main_menu.tres" id="5_t33xo"]
+[ext_resource type="Script" uid="uid://w4ol2ngg1637" path="res://scripts/info_bubble.gd" id="6_71c8i"]
 
 [sub_resource type="Animation" id="Animation_0bcn5"]
 length = 0.001
@@ -59,4 +61,17 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_vlogf")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("5_t33xo")
+script = ExtResource("6_71c8i")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

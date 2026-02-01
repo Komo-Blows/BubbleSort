@@ -9,4 +9,4 @@ extends Resource
 @export var sfx: AudioStreamWAV
 @export var major_multiplier: int = 3
 @export var minor_multiplier: int = 2
-@export var happy_satisfaction_level: int = 1
+@export var happy_satisfaction_level: int = 5
