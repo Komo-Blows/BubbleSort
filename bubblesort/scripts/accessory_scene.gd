@@ -68,4 +68,4 @@ func attach(parent):
 	lock_rotation = true
 
 func display_info():
-	
+	pass

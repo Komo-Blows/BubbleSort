@@ -8,5 +8,3 @@ class_name Accessory
 @export var image = Texture2D
 @export var image_scale: float = 1.0
 @export_range(10, 50) var collision_radius = 20
-
-func 
