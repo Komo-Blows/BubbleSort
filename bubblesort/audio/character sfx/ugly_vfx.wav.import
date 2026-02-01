@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bt5kmdhhxae2d"
+path="res://.godot/imported/ugly_vfx.wav-66553cba3f76f8e2ca3e91ee62235cce.sample"
+
+[deps]
+
+source_file="res://audio/character sfx/ugly_vfx.wav"
+dest_files=["res://.godot/imported/ugly_vfx.wav-66553cba3f76f8e2ca3e91ee62235cce.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

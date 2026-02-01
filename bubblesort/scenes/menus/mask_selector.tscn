@@ -78,8 +78,8 @@ script = ExtResource("1_rev3u")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 99.0
-offset_right = 1821.0
+offset_left = -2000.0
+offset_right = -278.0
 offset_bottom = 409.0
 theme = ExtResource("1_f77up")
 columns = 4

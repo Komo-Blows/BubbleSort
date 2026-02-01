@@ -30,8 +30,9 @@ func _ready():
 	
 	update_character(current_character)
 
+@onready
+var audio = $AudioStreamPlayer2D
 func update():
-	print("new character incoming!")
 	while true:
 		current_character = characters.pick_random()
 		if !recent_characters.has(current_character):
@@ -39,6 +40,11 @@ func update():
 	print(recent_characters)
 	recent_characters.append(current_character)
 	update_character(current_character)
+	
+	await get_tree().create_timer(1).timeout
+	if current_character.sfx:
+		audio.stream = current_character.sfx
+		audio.play()
 
 ## Given a mask, weighs it against the current character's attributes,
 ## and displays a satisfaction emoji. Does not automatically cycle characters.
