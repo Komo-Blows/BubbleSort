@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://kvbplsrjjkgn"]
+[gd_scene load_steps=17 format=3 uid="uid://kvbplsrjjkgn"]
 
 [ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://scripts/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://dggcaqhtyfigq" path="res://scenes/charm_bucket.tscn" id="5_j287u"]
 [ext_resource type="PackedScene" uid="uid://5gbmbpge668w" path="res://scenes/character.tscn" id="5_jh1ax"]
 [ext_resource type="Texture2D" uid="uid://dmrj5n4kp6ic5" path="res://sprites/movement_instructions.png" id="5_kycxp"]
+[ext_resource type="Script" uid="uid://h5idxs70dsyx" path="res://color_picker_button.gd" id="6_5sfjl"]
 [ext_resource type="PackedScene" uid="uid://3xhbadaqwj03" path="res://scenes/menus/mask_selector.tscn" id="6_kycxp"]
+[ext_resource type="Texture2D" uid="uid://d26siro2xan64" path="res://sprites/color_picker.svg" id="7_3hfy5"]
+[ext_resource type="Texture2D" uid="uid://cbim6hw475hdj" path="res://sprites/circle.png" id="8_7pvxh"]
 
 [sub_resource type="Resource" id="Resource_sqa0i"]
 metadata/__load_path__ = "res://characters/Joe_Character.tres"
@@ -123,3 +126,23 @@ visible = false
 position = Vector2(1694, 930)
 scale = Vector2(0.401, 0.401)
 texture = ExtResource("5_kycxp")
+
+[node name="color_picker_button" type="Node2D" parent="."]
+position = Vector2(1787, 643)
+script = ExtResource("6_5sfjl")
+
+[node name="colorpicker" type="Sprite2D" parent="color_picker_button"]
+scale = Vector2(0.09125, 0.09125)
+texture = ExtResource("7_3hfy5")
+
+[node name="ColorRect" type="ColorRect" parent="color_picker_button/colorpicker"]
+show_behind_parent = true
+offset_left = 30.0
+offset_top = -138.0
+offset_right = 139.0
+offset_bottom = 345.0
+rotation = 0.778277
+
+[node name="circle" type="Sprite2D" parent="color_picker_button"]
+scale = Vector2(0.233398, 0.233398)
+texture = ExtResource("8_7pvxh")

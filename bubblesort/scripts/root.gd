@@ -61,3 +61,7 @@ func take_screenshot() -> void:
 	var screenshot_path: String = "res://screenshots/screenshot_" + date_str + "_" + time_str + ".png"
 	image.save_png(screenshot_path)
 	print("Screenshot saved to: " + screenshot_path)
+
+func color_mask(c: Color): 
+	if current_mask: 
+		current_mask.color(c)
