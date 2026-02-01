@@ -64,6 +64,7 @@ func calculate_satisfaction(mask: MaskScene) -> int:
 	total_score += minor_score * self.current_character.minor_multiplier
 	return total_score
 	
+	
 ## Given the mask for the current character, calculates a satisfaction reaction for the character.
 func calculate_reaction(mask: MaskScene) -> SatisfactionLevel:
 	var total_score: int = self.calculate_satisfaction(mask)
