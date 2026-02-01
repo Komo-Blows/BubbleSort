@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhyj06pd06vcj"]
+[gd_scene load_steps=13 format=3 uid="uid://dhyj06pd06vcj"]
 
 [ext_resource type="Script" uid="uid://bw0ycv6gvjf7y" path="res://scripts/main_menu.gd" id="1_imvie"]
 [ext_resource type="Texture2D" uid="uid://cn3qbf1u1ksd5" path="res://sprites/home_screen.png" id="2_ng0o5"]
 [ext_resource type="FontFile" uid="uid://cvy36cmppc64f" path="res://BLKCHCRY.TTF" id="3_8r73w"]
 [ext_resource type="Theme" uid="uid://c8p03k0u8y5f4" path="res://main_menu.tres" id="4_1hnlc"]
 [ext_resource type="Script" uid="uid://bu7drifkov024" path="res://scripts/new_game.gd" id="5_50h1w"]
+[ext_resource type="Texture2D" uid="uid://d2o7xwffa323c" path="res://sprites/characters/cowboy_cutesy.png" id="6_88kup"]
+[ext_resource type="Texture2D" uid="uid://debh04qf6qvkn" path="res://sprites/characters/fishy_irish.png" id="7_bh4e2"]
+[ext_resource type="Texture2D" uid="uid://bi8jyprqmigfl" path="res://sprites/characters/ugly_techy(unity_glaze).png" id="8_3w8rc"]
+[ext_resource type="Texture2D" uid="uid://dkvkhv1xwehml" path="res://sprites/characters/robo-fish.png" id="9_uxao6"]
+[ext_resource type="Texture2D" uid="uid://busnmlmqaqflw" path="res://sprites/characters/goth-demonic.png" id="10_vr0hv"]
+[ext_resource type="Texture2D" uid="uid://d2rf4osy0fyw4" path="res://sprites/characters/fish-cutesy.png" id="11_a3hrp"]
+[ext_resource type="Texture2D" uid="uid://238qs77b32t8" path="res://sprites/characters/irish_sad.png" id="12_25m6f"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3
@@ -21,15 +28,14 @@ centered = false
 
 [node name="TextEdit" type="Label" parent="."]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 521.0
-offset_right = 1626.0
-offset_bottom = 1026.0
+offset_left = 540.0
+offset_top = 418.0
+offset_right = 2097.0
+offset_bottom = 923.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8r73w")
 theme_override_font_sizes/font_size = 200
-text = "Papa's 
-Masquerada"
+text = "Masquerada"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -51,20 +57,45 @@ theme = ExtResource("4_1hnlc")
 text = "New game"
 script = ExtResource("5_50h1w")
 
-[node name="Continue" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_1hnlc")
-text = "Continue"
-
-[node name="reminder" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_1hnlc")
-text = "Rule Reminder"
-
 [node name="photo gallery" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_1hnlc")
 text = "Photo Gallery"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(198.4, 892.4)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_88kup")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(422.4, 846.4)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_bh4e2")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(734, 884.4)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_3w8rc")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(1068, 892)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_uxao6")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1246, 905)
+scale = Vector2(0.448, 0.431413)
+texture = ExtResource("10_vr0hv")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(1508.4, 891.4)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_a3hrp")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(1839, 826.4)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_25m6f")
 
 [connection signal="pressed" from="VBoxContainer/New Game" to="VBoxContainer/New Game" method="_on_pressed"]
 [connection signal="button_down" from="VBoxContainer/photo gallery" to="." method="_on_photo_gallery_button_down"]

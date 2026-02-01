@@ -39,8 +39,8 @@ func _ready():
 	var files = DirAccess.get_files_at(charm_folder)
 	for file in files:
 		i += 1
-		var charm_resource = load(charm_folder + file)
-		$charm_bucket.add_charm(charm_resource)
+		#var charm_resource = load(charm_folder + file)
+		$charm_bucket.add_charm()
 		if i >= 10: # ten charms only
 			break
 	new_character()
@@ -82,10 +82,19 @@ func color_mask(c: Color):
 		
 ## Calculates the next quota.
 func calculate_next_quota() -> int:
-	return self.quota + 1
+	return self.quota + 20 + 3 * self.day
 
+@onready var button = $next_day_menu/Button
+@onready var pause = $next_day_menu
+@onready var charm_bucket = $charm_bucket
 ## Given the day, current amount of points, and a quota updates the points label.
 func update_label(new_day: int, new_points: int, new_quota: int):
+	if new_day > day:
+		pause.visible = true
+		await button.button_down
+		for i in range(7):
+			$charm_bucket.add_charm()
+		pause.visible = false
 	self.day = new_day
 	self.points = new_points
 	self.quota = new_quota
@@ -100,13 +109,14 @@ func calculate_next_daily_attempts() -> int:
 func handle_spacebar() -> void:
 	await child.take_mask(current_mask).finished #Creates a reaction, and lets it finish.
 	self.update_label(self.day, \
-	self.points + self.points_dict[child.calculate_reaction(current_mask)], self.quota)
+	self.points + child.calculate_satisfaction(current_mask), self.quota)
+	#print(child.calculate_satisfaction(current_mask))
 	self.attempt_count += 1
 	# Check if the day is over.
 	if self.attempt_count >= self.daily_attempts:
 		if self.points >= self.quota:
 			self.daily_attempts = calculate_next_daily_attempts() # hidden from user.
-			self.attempt_count = 0		
+			self.attempt_count = 0
 			self.update_label(self.day + 1, 0, calculate_next_quota())
 		else:
 			self.game_over = true

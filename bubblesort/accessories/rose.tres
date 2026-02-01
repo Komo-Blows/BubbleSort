@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Accessory" load_steps=5 format=3 uid="uid://b540m0tndkcjh"]
+
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_hhw20"]
+[ext_resource type="Script" uid="uid://ct50su2tauap" path="res://scripts/accessory_resource.gd" id="1_w0duv"]
+[ext_resource type="Texture2D" uid="uid://16jv3woj0q6x" path="res://sprites/charms/rose.png" id="2_4x1ol"]
+
+[sub_resource type="Resource" id="Resource_t3ok4"]
+script = ExtResource("1_hhw20")
+techy = 0
+fishy = 0
+cutesy = 5
+preppy = 0
+ugly = 0
+demonic = 0
+cowboy = 1
+irish = 0
+badly_drawn = 0
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("1_w0duv")
+aesthetic = SubResource("Resource_t3ok4")
+name = "rose"
+image = ExtResource("2_4x1ol")
+image_scale = 0.1
+collision_radius = 20
+metadata/_custom_type_script = "uid://ct50su2tauap"

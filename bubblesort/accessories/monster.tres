@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Accessory" load_steps=5 format=3 uid="uid://ln0d4bv10ajw"]
+
+[ext_resource type="Script" uid="uid://ct50su2tauap" path="res://scripts/accessory_resource.gd" id="1_grgwp"]
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_ohwp1"]
+[ext_resource type="Texture2D" uid="uid://dnyxdsnthjetw" path="res://sprites/charms/monster.png" id="2_b2afu"]
+
+[sub_resource type="Resource" id="Resource_82kbn"]
+script = ExtResource("1_ohwp1")
+techy = 4
+fishy = 0
+cutesy = 0
+preppy = 0
+ugly = 0
+demonic = 4
+cowboy = 0
+irish = 0
+badly_drawn = 0
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("1_grgwp")
+aesthetic = SubResource("Resource_82kbn")
+name = "monsker energy drink (unbranded)"
+image = ExtResource("2_b2afu")
+image_scale = 0.1
+collision_radius = 20
+metadata/_custom_type_script = "uid://ct50su2tauap"

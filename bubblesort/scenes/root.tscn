@@ -1,14 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://kvbplsrjjkgn"]
+[gd_scene load_steps=22 format=3 uid="uid://kvbplsrjjkgn"]
 
 [ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://scripts/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://dggcaqhtyfigq" path="res://scenes/charm_bucket.tscn" id="5_j287u"]
 [ext_resource type="PackedScene" uid="uid://5gbmbpge668w" path="res://scenes/character.tscn" id="5_jh1ax"]
 [ext_resource type="Texture2D" uid="uid://dmrj5n4kp6ic5" path="res://sprites/movement_instructions.png" id="5_kycxp"]
-[ext_resource type="Script" path="res://color_picker_button.gd" id="6_5sfjl"]
+[ext_resource type="Script" uid="uid://h5idxs70dsyx" path="res://color_picker_button.gd" id="6_5sfjl"]
 [ext_resource type="PackedScene" uid="uid://3xhbadaqwj03" path="res://scenes/menus/mask_selector.tscn" id="6_kycxp"]
 [ext_resource type="Texture2D" uid="uid://d26siro2xan64" path="res://sprites/color_picker.svg" id="7_3hfy5"]
 [ext_resource type="Texture2D" uid="uid://cbim6hw475hdj" path="res://sprites/circle.png" id="8_7pvxh"]
 [ext_resource type="Texture2D" uid="uid://br1285ai2indi" path="res://sprites/palette.png" id="9_3hfy5"]
+[ext_resource type="FontFile" uid="uid://cvy36cmppc64f" path="res://BLKCHCRY.TTF" id="10_l5cgh"]
+[ext_resource type="Texture2D" uid="uid://ch6k1muqhyt2o" path="res://sprites/bg_masks.png" id="10_y3xxt"]
+[ext_resource type="Texture2D" uid="uid://duvopho5ybv15" path="res://sprites/desk.png" id="11_xsp7o"]
+[ext_resource type="Theme" uid="uid://c8p03k0u8y5f4" path="res://main_menu.tres" id="13_vgks2"]
 
 [sub_resource type="Resource" id="Resource_sqa0i"]
 metadata/__load_path__ = "res://characters/Joe_Character.tres"
@@ -165,8 +169,54 @@ texture = ExtResource("8_7pvxh")
 
 [node name="Points" type="Label" parent="."]
 texture_filter = 1
-offset_left = 1499.0
+offset_left = 1486.0
 offset_top = 16.0
-offset_right = 1650.0
+offset_right = 1643.0
 offset_bottom = 39.0
 scale = Vector2(2.08, 2.84)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("10_l5cgh")
+horizontal_alignment = 2
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("10_y3xxt")
+centered = false
+
+[node name="desk" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("11_xsp7o")
+centered = false
+
+[node name="next_day_menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="next_day_menu"]
+layout_mode = 0
+offset_right = 2079.0
+offset_bottom = 1193.0
+color = Color(0.227451, 0.227451, 0.227451, 0.615686)
+
+[node name="Button" type="Button" parent="next_day_menu"]
+layout_mode = 0
+offset_left = 793.0
+offset_top = 562.0
+offset_right = 1100.0
+offset_bottom = 683.0
+theme = ExtResource("13_vgks2")
+text = "Next Day"
+
+[node name="Label" type="Label" parent="next_day_menu"]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 217.0
+offset_right = 1460.0
+offset_bottom = 438.0
+theme = ExtResource("13_vgks2")
+theme_override_font_sizes/font_size = 128
+text = "You didn't get fired!"

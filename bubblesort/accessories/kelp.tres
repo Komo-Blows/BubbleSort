@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Accessory" load_steps=5 format=3 uid="uid://oqvgqjiinv6v"]
+
+[ext_resource type="Script" uid="uid://ct50su2tauap" path="res://scripts/accessory_resource.gd" id="1_3gmf2"]
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_6g722"]
+[ext_resource type="Texture2D" uid="uid://cium2mn3no0et" path="res://sprites/charms/kelp.png" id="2_8vh7i"]
+
+[sub_resource type="Resource" id="Resource_q35tj"]
+script = ExtResource("1_6g722")
+techy = 0
+fishy = 5
+cutesy = 0
+preppy = 0
+ugly = 0
+demonic = 0
+cowboy = 0
+irish = 2
+badly_drawn = 0
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("1_3gmf2")
+aesthetic = SubResource("Resource_q35tj")
+name = "irish kelp"
+image = ExtResource("2_8vh7i")
+image_scale = 0.1
+collision_radius = 20
+metadata/_custom_type_script = "uid://ct50su2tauap"

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Accessory" load_steps=5 format=3 uid="uid://bb32f7airbmw4"]
+
+[ext_resource type="Script" uid="uid://ct50su2tauap" path="res://scripts/accessory_resource.gd" id="1_8kela"]
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_iptt4"]
+[ext_resource type="Texture2D" uid="uid://bu7iti5mqkmpl" path="res://sprites/charms/horse.png" id="2_vo0gn"]
+
+[sub_resource type="Resource" id="Resource_3gm61"]
+script = ExtResource("1_iptt4")
+techy = 0
+fishy = 0
+cutesy = 2
+preppy = 0
+ugly = 0
+demonic = 0
+cowboy = 4
+irish = 0
+badly_drawn = 2
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("1_8kela")
+aesthetic = SubResource("Resource_3gm61")
+name = "dapper horse"
+image = ExtResource("2_vo0gn")
+image_scale = 0.1
+collision_radius = 20
+metadata/_custom_type_script = "uid://ct50su2tauap"

@@ -62,8 +62,6 @@ func calculate_satisfaction(mask: MaskScene) -> int:
 	var major_score: int = mask.aesthetic.get_dict()[current_char_major_aesth]
 	var minor_score: int = mask.aesthetic.get_dict()[current_char_minor_aesth]
 	var total_score: int = 0
-	print("maja " + str(major_score))
-	print("mainah " + str(minor_score))
 	total_score += major_score * self.current_character.major_multiplier
 	total_score += minor_score * self.current_character.minor_multiplier
 	return total_score
@@ -72,7 +70,8 @@ func calculate_satisfaction(mask: MaskScene) -> int:
 ## Given the mask for the current character, calculates a satisfaction reaction for the character.
 func calculate_reaction(mask: MaskScene) -> SatisfactionLevel:
 	var total_score: int = self.calculate_satisfaction(mask)
-	var satisfaction_limit: int = self.current_character.happy_satisfaction_level
+	var satisfaction_limit: int = self.current_character.get_max_satisfaction()
+	print(satisfaction_limit)
 	# Range split is [0, 0.3], (0.3, 0.6] (0.6, 0.8], 0.8+ portion of satisfaction level,
 	# for chopped, upset, meh, happy respectively.
 	print("total is " + str(total_score))
@@ -90,6 +89,7 @@ func calculate_reaction(mask: MaskScene) -> SatisfactionLevel:
 func display_reaction(sl: SatisfactionLevel) -> Tween:
 	var emoji = Sprite2D.new()
 	emoji.texture = get_emoji_texture(sl)
+	print(emoji.texture.resource_path)
 	emoji.position = Vector2(0, -50)
 	add_child(emoji)
 	

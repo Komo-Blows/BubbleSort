@@ -24,6 +24,7 @@ func _ready():
 	for key in aesthetic_dict:
 		if aesthetic_dict[key] != 0:
 			#print(aesthetic_dict)
+			text_to_bubble += accessory.name + "\n"
 			text_to_bubble += str(Globals.aesthetics.keys()[key]) + " : " + str(aesthetic_dict[key]) + "\n"
 	info_bubble.text = text_to_bubble
 

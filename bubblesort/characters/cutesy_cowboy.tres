@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="character" load_steps=4 format=3 uid="uid://dt60njaj2we56"]
+
+[ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_4y3r7"]
+[ext_resource type="Texture2D" uid="uid://tg2qjlrd6w72" path="res://sprites/characters/cutesy_cowboy.png" id="1_5f1s2"]
+[ext_resource type="AudioStream" uid="uid://dcvu8ag0ujxht" path="res://audio/character sfx/cute_vfx.wav" id="3_yca0o"]
+
+[resource]
+script = ExtResource("1_4y3r7")
+major = 2
+minor = 6
+image = ExtResource("1_5f1s2")
+sfx = ExtResource("3_yca0o")
+major_multiplier = 3
+minor_multiplier = 2
+happy_satisfaction_level = 10
+metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

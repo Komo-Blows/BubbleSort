@@ -4,14 +4,23 @@ var accessory_scene := preload('res://scenes/accessory_scene.tscn')
 @onready var spawnpoint: = $spawnpoint
 var on_screen = false
 
+var all_accessories = []
 func _ready():
 	global_position = Vector2(-500, 600)
+	var charm_files = DirAccess.get_files_at("res://accessories/")
+	for file_name in charm_files:
+		if file_name.ends_with(".tres"):
+			var file = "res://accessories/" + file_name
+			file = load(file)
+			all_accessories.append(file)
 
-func add_charm(new_charm_resource: Resource):
+func add_charm():
 	var new_charm := accessory_scene.instantiate()
-	new_charm.accessory = new_charm_resource
+	new_charm.accessory = all_accessories.pick_random()
 	new_charm.global_position = spawnpoint.global_position
 	add_child(new_charm)
+
+
 
 @onready var animator = $animator
 func _input(event: InputEvent) -> void:

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Accessory" load_steps=5 format=3 uid="uid://bfbij2o8oxnhw"]
+
+[ext_resource type="Script" uid="uid://ct50su2tauap" path="res://scripts/accessory_resource.gd" id="1_3ap0q"]
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_vyekw"]
+[ext_resource type="Texture2D" uid="uid://chnekgagf6v64" path="res://sprites/charms/graphics_card.png" id="2_lhwhx"]
+
+[sub_resource type="Resource" id="Resource_woeqo"]
+script = ExtResource("1_vyekw")
+techy = 5
+fishy = 1
+cutesy = 0
+preppy = 0
+ugly = 0
+demonic = 0
+cowboy = 0
+irish = 0
+badly_drawn = 0
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("1_3ap0q")
+aesthetic = SubResource("Resource_woeqo")
+name = "$900"
+image = ExtResource("2_lhwhx")
+image_scale = 0.1
+collision_radius = 20
+metadata/_custom_type_script = "uid://ct50su2tauap"
