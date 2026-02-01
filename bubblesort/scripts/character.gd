@@ -64,6 +64,7 @@ func calculate_satisfaction(mask: MaskScene) -> int:
 	total_score += minor_score * self.current_character.minor_multiplier
 	return total_score
 	
+	
 ## Given the mask for the current character, calculates a satisfaction reaction for the character.
 func calculate_reaction(mask: MaskScene) -> SatisfactionLevel:
 	var total_score: int = self.calculate_satisfaction(mask)
@@ -91,15 +92,29 @@ func display_reaction(sl: SatisfactionLevel) -> Tween:
 	tween.parallel().tween_property(emoji, "modulate:a", 0.0, 0.8).set_delay(0.3)
 	tween.tween_callback(emoji.queue_free)
 	return tween
-	
+
+#sfx
+var upset_sfx = preload("res://audio/sad.wav")
+var meh_sfx = preload("res://audio/neutral.wav")
+var slight_sfx = preload("res://audio/happy.wav")
+var happy_sfx = preload("res://audio/happiest.wav")
+
+
 ## Given a satisfaction level, provides a texture for that satisfaction level.
 func get_emoji_texture(sl: SatisfactionLevel) -> Texture2D:
 	match sl:
-		SatisfactionLevel.MEH: \
-		return preload("res://sprites/characters/reactions/blank-smile-blue-emoji-yellow.png")
-		SatisfactionLevel.UPSET: \
-		return preload("res://sprites/characters/reactions/frustrated-blue-emoji-red.png")
+		SatisfactionLevel.MEH: 
+			play_sfx(meh_sfx)
+			return preload("res://sprites/characters/reactions/blank-smile-blue-emoji-yellow.png")
+		SatisfactionLevel.UPSET: 
+			play_sfx(upset_sfx)
+			return preload("res://sprites/characters/reactions/frustrated-blue-emoji-red.png")
 		SatisfactionLevel.CHOPPED: \
 		return preload("res://sprites/characters/reactions/scared-and-defending-blue-emoji-black.png")
 	# Default return is SatisfactionLevel.HAPPY	
+	play_sfx(happy_sfx)
 	return preload("res://sprites/characters/reactions/ok-sign-blue-emoji-green.png")
+
+func play_sfx(sfx):
+	audio.stream = sfx
+	audio.play()
