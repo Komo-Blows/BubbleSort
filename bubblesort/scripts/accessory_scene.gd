@@ -56,6 +56,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				Signals.showhide_instructions.emit(false)
 		else:
 			hide_info()
+			play(fabric_sfx)
 			Signals.showhide_instructions.emit(true)
 			set_collision_layer_value(2, false)
 			set_collision_mask_value(2, false)
@@ -79,7 +80,17 @@ func _process(_d) -> void:
 		if sprite.scale.x > 0.2*accessory.image_scale and Input.is_action_pressed("S"):
 			sprite.scale *= 0.99
 
+var fabric_sfx = preload("res://audio/fabric.wav")
+var click_down = preload("res://audio/charm_onto_mask.wav")
+
+@onready
+var audio = $AudioStreamPlayer2D
+func play(sfx):
+	audio.stream = sfx
+	audio.play()
+
 func attach(parent):
+	play(click_down)
 	follow_mouse = false
 	var record_globals = [global_position, global_rotation, global_scale]
 	top_level = false
