@@ -9,7 +9,8 @@ class_name MaskScene
 var focus_charm
 var placed := false
 
-func new_mask(mask_resource) -> void:
+func new_mask(mask_resource: Mask) -> void:
+	aesthetic = mask_resource.aesthetic
 	sprite.texture = mask_resource.image
 	var bits = BitMap.new()
 	bits.create_from_image_alpha(mask_resource.image.get_image())

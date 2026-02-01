@@ -7,6 +7,6 @@ extends Resource
 @export var image: Texture2D
 
 @export var sfx: AudioStreamWAV
-@export var major_multiplier: int
-@export var minor_multiplier: int
-@export var happy_satisfaction_level: int
+@export var major_multiplier: int = 3
+@export var minor_multiplier: int = 2
+@export var happy_satisfaction_level: int = 1
