@@ -12,7 +12,7 @@ resource_name = "play_main"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("audio_player_2:volume_db")
+tracks/0/path = NodePath("main:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("audio_player_1:volume_db")
+tracks/1/path = NodePath("title:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -39,7 +39,7 @@ resource_name = "play_title"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("audio_player_2:volume_db")
+tracks/0/path = NodePath("main:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -51,7 +51,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("audio_player_1:volume_db")
+tracks/1/path = NodePath("title:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -71,11 +71,11 @@ _data = {
 [node name="global_soundtrack" type="Node"]
 script = ExtResource("2_6du74")
 
-[node name="audio_player_1" type="AudioStreamPlayer2D" parent="."]
+[node name="title" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_6du74")
 autoplay = true
 
-[node name="audio_player_2" type="AudioStreamPlayer2D" parent="."]
+[node name="main" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_kn71l")
 volume_db = -80.0
 autoplay = true
