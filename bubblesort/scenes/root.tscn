@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://kvbplsrjjkgn"]
+[gd_scene load_steps=13 format=3 uid="uid://kvbplsrjjkgn"]
 
 [ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://scripts/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://dggcaqhtyfigq" path="res://scenes/charm_bucket.tscn" id="5_j287u"]
 [ext_resource type="PackedScene" uid="uid://5gbmbpge668w" path="res://scenes/character.tscn" id="5_jh1ax"]
 [ext_resource type="PackedScene" uid="uid://3xhbadaqwj03" path="res://scenes/mask_selector.tscn" id="6_kycxp"]
+
+[sub_resource type="Resource" id="Resource_sqa0i"]
+metadata/__load_path__ = "res://characters/Joe_Character.tres"
 
 [sub_resource type="Animation" id="Animation_kycxp"]
 length = 0.001
@@ -41,7 +44,7 @@ tracks/1/path = NodePath("../mask selector")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.933333),
+"times": PackedFloat32Array(0.766667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -83,6 +86,7 @@ script = ExtResource("1_pq8q7")
 
 [node name="character" parent="." instance=ExtResource("5_jh1ax")]
 position = Vector2(576, 324)
+current_character = SubResource("Resource_sqa0i")
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(5, -23)
