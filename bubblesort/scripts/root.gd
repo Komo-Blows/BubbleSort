@@ -8,6 +8,7 @@ var animator = $AnimationPlayer
 var mask_menu = $"mask selector"
 
 var current_mask: MaskScene = null
+var points := 0
 
 func new_character(delay : int = 2):
 	animator.play("slide out")
@@ -30,7 +31,6 @@ func _ready():
 		$charm_bucket.add_charm(charm_resource)
 		if i >= 10: # ten charms only
 			break
-	
 	new_character()
 
 @onready
@@ -66,3 +66,7 @@ func take_screenshot() -> void:
 func color_mask(c: Color): 
 	if current_mask: 
 		current_mask.color(c)
+
+func update_points(number):
+	points = number
+	$Points.text = 'Happiness Points: ' + str(points)

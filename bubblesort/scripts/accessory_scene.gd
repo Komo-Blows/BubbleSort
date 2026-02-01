@@ -9,6 +9,7 @@ extends RigidBody2D
 @onready var aesthetic = accessory.aesthetic
 
 func _ready():
+	top_level = true
 	assert(accessory != null, "no accessory object assigned to scene!")
 	assert(aesthetic != null, "accessory not assigned an aesthetic")
 	sprite.texture = accessory.image
@@ -80,6 +81,11 @@ func _process(_d) -> void:
 
 func attach(parent):
 	follow_mouse = false
+	var record_globals = [global_position, global_rotation, global_scale]
+	top_level = false
+	global_position = record_globals[0]
+	global_rotation = record_globals[1]
+	global_scale = record_globals[2]
 	freeze = true
 	sleeping = true
 	lock_rotation = true
