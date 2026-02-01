@@ -21,6 +21,7 @@ func new_mask(mask_resource) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if placed and body is AccessoryScene:
+		print('got something')
 		focus_charm = body
 		focus_charm.over_mask = true
 

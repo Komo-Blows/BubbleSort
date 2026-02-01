@@ -101,4 +101,4 @@ offset_top = 989.0
 offset_right = 169.0
 offset_bottom = 1012.0
 scale = Vector2(2.20874, 2.86628)
-text = "Select a mask!"
+text = "Select a mask that fits the character!"

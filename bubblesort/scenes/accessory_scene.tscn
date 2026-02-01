@@ -11,8 +11,8 @@ radius = 39.0128
 [node name="accessory_scene" type="RigidBody2D"]
 top_level = true
 z_index = 1
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 input_pickable = true
 angular_damp = 3.571
 script = ExtResource("1_712mg")

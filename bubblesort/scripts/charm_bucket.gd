@@ -39,7 +39,6 @@ func phase_out():
 		if child is RigidBody2D:
 			child.set_collision_layer_value(1, false)
 			child.set_collision_mask_value(1, false)
-	
 
 func phase_in():
 	for child in get_children():
