@@ -33,9 +33,12 @@ func _ready():
 	#await get_tree().create_timer(1).timeout
 	new_character()
 
+@onready
+var current_character = $character
 var mask_scene = preload('res://scenes/mask_scene.tscn')
 func select_mask(resource): # connected as signal to mask_shape_selected
 	var mask = mask_scene.instantiate()
+	mask.char = current_character
 	add_child(mask)
 	current_mask = mask
 	mask.new_mask(resource)

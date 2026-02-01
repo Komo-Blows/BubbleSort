@@ -11,7 +11,10 @@ var characters := []
 
 func update_character(char : character):
 	sprite.texture = char.image
-	
+	for child in get_children():
+		if child is MaskScene:
+			child.queue_free()
+
 func _ready():
 	var char_files = DirAccess.get_files_at("res://characters/")
 	for file_name in char_files:

@@ -28,6 +28,7 @@ func _on_body_exited(body: Node2D) -> void:
 		focus_charm.over_mask = false
 		focus_charm = null
 
+var char : Node2D
 var rotational_velocity: float = 0.0
 func _process(dt):
 	if placed and focus_charm and focus_charm.stuck:
@@ -48,6 +49,7 @@ func _process(dt):
 		if Input.is_action_just_pressed('click'):
 			placed = true
 			collision.disabled = false
+			self.reparent(char,true)
 
 func color(c:Color):
 	sprite.self_modulate = c
