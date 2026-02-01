@@ -31,7 +31,6 @@ func _ready():
 		if i >= 10: # ten charms only
 			break
 	
-	#await get_tree().create_timer(1).timeout
 	new_character()
 
 @onready
@@ -53,7 +52,6 @@ func _process(delta: float) -> void:
 
 func showhide_instructions(toggle):
 	$instructions.visible = toggle
-
 
 func take_screenshot() -> void:
 	var viewport_texture: ViewportTexture = get_viewport().get_texture()

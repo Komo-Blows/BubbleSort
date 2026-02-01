@@ -34,7 +34,7 @@ func _on_mouse_entered() -> void:
 		timer.start()
 		#print("inflating")
 		mouse_over = true
-		sprite.scale *= Vector2(accessory.image_scale, accessory.image_scale)*1.5
+		sprite.scale = Vector2(accessory.image_scale*1.5, accessory.image_scale*1.5)
 
 func _on_mouse_exited() -> void:
 	if !follow_mouse and not stuck:
@@ -59,6 +59,12 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			set_collision_layer_value(2, false)
 			set_collision_mask_value(2, false)
 			follow_mouse = true
+	if event.is_action_pressed('rightclick') and mouse_over and follow_mouse:
+		set_collision_layer_value(2, true)
+		set_collision_mask_value(2, true)
+		follow_mouse = false
+		stuck = true
+		Signals.showhide_instructions.emit(false)
 
 const follow_strength = 10
 func _process(_d) -> void:

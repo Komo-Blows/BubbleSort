@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Accessory" load_steps=5 format=3 uid="uid://bbxb10mcv7lxg"]
+[gd_resource type="Resource" script_class="Accessory" load_steps=5 format=3 uid="uid://d184mswwa1jnp"]
 
 [ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_5hjvo"]
 [ext_resource type="Script" uid="uid://ct50su2tauap" path="res://scripts/accessory_resource.gd" id="1_iwecv"]
