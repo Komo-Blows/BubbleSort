@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Mask" load_steps=5 format=3 uid="uid://7yt0hd6wyyj7"]
+
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_jkv3x"]
+[ext_resource type="Script" uid="uid://c6btc8e6vrdny" path="res://scripts/mask_resource.gd" id="1_w6uxp"]
+[ext_resource type="Texture2D" uid="uid://tvbqp270soig" path="res://sprites/masks/big_forehead.png" id="2_jyjp1"]
+
+[sub_resource type="Resource" id="Resource_vtalf"]
+script = ExtResource("1_jkv3x")
+techy = 0
+fishy = 0
+cutesy = 0
+preppy = 0
+ugly = 2
+demonic = 0
+cowboy = 1
+irish = 0
+badly_drawn = 0
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("1_w6uxp")
+image = ExtResource("2_jyjp1")
+aesthetic = SubResource("Resource_vtalf")
+metadata/_custom_type_script = "uid://c6btc8e6vrdny"
