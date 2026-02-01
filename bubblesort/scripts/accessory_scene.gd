@@ -67,15 +67,14 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 const follow_strength = 10
 func _process(_d) -> void:
-	#print(mouse_over)
 	if follow_mouse:
 		if Input.get_axis('Q', 'E'):
 			angular_velocity = Input.get_axis('Q', 'E')*2
 		var mouse_direction = get_global_mouse_position() - global_position
 		linear_velocity = mouse_direction * follow_strength
-		if sprite.scale.x < 5 and Input.is_action_pressed("W"):
+		if sprite.scale.x < 5*accessory.image_scale and Input.is_action_pressed("W"):
 			sprite.scale *= 1.01
-		if sprite.scale.x > 0.2 and Input.is_action_pressed("S"):
+		if sprite.scale.x > 0.2*accessory.image_scale and Input.is_action_pressed("S"):
 			sprite.scale *= 0.99
 
 func attach(parent):
