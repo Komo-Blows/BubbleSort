@@ -17,6 +17,7 @@ func new_mask(mask_resource) -> void:
 	collision.polygon = tig_bitties[0]
 	collision.position = -mask_resource.image.get_image().get_size()/2
 	collision.disabled = true
+	Signals.showhide_instructions.emit(true)
 
 func _on_body_entered(body: Node2D) -> void:
 	if placed and body is AccessoryScene:
@@ -48,6 +49,7 @@ func _process(dt):
 		if Input.is_action_just_pressed('click'):
 			placed = true
 			collision.disabled = false
+			Signals.showhide_instructions.emit(false)
 
 func color(c:Color):
 	sprite.self_modulate = c

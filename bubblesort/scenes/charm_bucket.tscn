@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dggcaqhtyfigq"]
+[gd_scene load_steps=8 format=3 uid="uid://dggcaqhtyfigq"]
 
 [ext_resource type="Script" uid="uid://c4f5w41hoooke" path="res://scripts/charm_bucket.gd" id="1_cfxgc"]
 [ext_resource type="Texture2D" uid="uid://box21pfdjt213" path="res://sprites/sack_ASS.png" id="2_mqpyi"]
+[ext_resource type="Texture2D" uid="uid://csbrqhjdckfsq" path="res://sprites/charm_instruction.png" id="3_jt817"]
 
 [sub_resource type="Animation" id="Animation_jt817"]
 length = 0.001
@@ -107,3 +108,8 @@ polygon = PackedVector2Array(169, 414, 121, 444, 94, 496, 101, 560, 146, 598, 25
 libraries = {
 &"": SubResource("AnimationLibrary_655bu")
 }
+
+[node name="CharmInstruction" type="Sprite2D" parent="."]
+position = Vector2(592, 44)
+scale = Vector2(0.518809, 0.518809)
+texture = ExtResource("3_jt817")

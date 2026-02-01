@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://kvbplsrjjkgn"]
+[gd_scene load_steps=14 format=3 uid="uid://kvbplsrjjkgn"]
 
 [ext_resource type="Script" uid="uid://kjwqgwdimnbn" path="res://scripts/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://dggcaqhtyfigq" path="res://scenes/charm_bucket.tscn" id="5_j287u"]
 [ext_resource type="PackedScene" uid="uid://5gbmbpge668w" path="res://scenes/character.tscn" id="5_jh1ax"]
+[ext_resource type="Texture2D" uid="uid://dmrj5n4kp6ic5" path="res://sprites/movement_instructions.png" id="5_kycxp"]
 [ext_resource type="PackedScene" uid="uid://3xhbadaqwj03" path="res://scenes/mask_selector.tscn" id="6_kycxp"]
 
 [sub_resource type="Resource" id="Resource_sqa0i"]
@@ -116,3 +117,9 @@ shape = SubResource("WorldBoundaryShape2D_j287u")
 [node name="leftwallhigh" type="CollisionShape2D" parent="walls_and_floor"]
 position = Vector2(-46, -724)
 shape = SubResource("RectangleShape2D_jh1ax")
+
+[node name="instructions" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1694, 930)
+scale = Vector2(0.401, 0.401)
+texture = ExtResource("5_kycxp")
