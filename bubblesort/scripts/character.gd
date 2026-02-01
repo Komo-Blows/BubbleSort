@@ -59,15 +59,6 @@ func calculate_satisfaction(mask: MaskScene) -> int:
 	var current_char_minor_aesth: Globals.aesthetics = self.current_character.minor
 	var major_score: int = mask.aesthetic.get_dict()[current_char_major_aesth]
 	var minor_score: int = mask.aesthetic.get_dict()[current_char_minor_aesth]
-	print("Major score: " + str(major_score))
-	print("Minor score: " + str(minor_score))
-	var satisfaction_level: SatisfactionLevel = self.calculate_satisfaction(major_score, minor_score)
-	return self.display_reaction(satisfaction_level)
-	
-	
-## Given the mask scores for the current character's major and minor aesthetics,
-## calculates a satisfaction level for the character.
-func calculate_satisfaction(major_score: int, minor_score: int) -> SatisfactionLevel:
 	var total_score: int = 0
 	total_score += major_score * self.current_character.major_multiplier
 	total_score += minor_score * self.current_character.minor_multiplier

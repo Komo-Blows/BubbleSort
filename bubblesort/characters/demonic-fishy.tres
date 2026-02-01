@@ -1,11 +1,16 @@
-[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://cjscncodgviqc"]
+[gd_resource type="Resource" script_class="character" load_steps=4 format=3 uid="uid://cjscncodgviqc"]
 
 [ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_nw0e6"]
 [ext_resource type="Texture2D" uid="uid://cwgodpl75xgly" path="res://sprites/characters/demonic-fish.png" id="1_ywsjk"]
+[ext_resource type="AudioStream" uid="uid://mw3wfdevw1kq" path="res://audio/character sfx/monster_vfx.wav" id="3_8t7kn"]
 
 [resource]
 script = ExtResource("1_nw0e6")
 major = 5
 minor = 1
 image = ExtResource("1_ywsjk")
+sfx = ExtResource("3_8t7kn")
+major_multiplier = 3
+minor_multiplier = 2
+happy_satisfaction_level = 1
 metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

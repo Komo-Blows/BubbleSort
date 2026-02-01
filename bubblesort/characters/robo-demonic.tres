@@ -1,11 +1,16 @@
-[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://okxf618u2t6g"]
+[gd_resource type="Resource" script_class="character" load_steps=4 format=3 uid="uid://okxf618u2t6g"]
 
 [ext_resource type="Texture2D" uid="uid://dsh14qmrpfpsv" path="res://sprites/characters/robo-demonic.png" id="1_eqag0"]
 [ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_xj12n"]
+[ext_resource type="AudioStream" uid="uid://ds5b1ghmu4lbd" path="res://audio/character sfx/techy_vfx.wav" id="3_3kp6g"]
 
 [resource]
 script = ExtResource("1_xj12n")
 major = 0
 minor = 5
 image = ExtResource("1_eqag0")
+sfx = ExtResource("3_3kp6g")
+major_multiplier = 3
+minor_multiplier = 2
+happy_satisfaction_level = 1
 metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"
