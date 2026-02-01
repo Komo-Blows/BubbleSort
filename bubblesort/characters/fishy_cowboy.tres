@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://chg0uetw2ji4f"]
+
+[ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_35xik"]
+[ext_resource type="Texture2D" uid="uid://b5kmcqnoltdif" path="res://sprites/characters/fishy_cowboy.png" id="1_c6cvo"]
+
+[resource]
+script = ExtResource("1_35xik")
+major = 1
+minor = 6
+image = ExtResource("1_c6cvo")
+metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"
