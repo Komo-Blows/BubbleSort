@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://wl1o0cj7npw8"]
+[gd_scene load_steps=4 format=3 uid="uid://b43kb1l0t8e3g"]
 
 [ext_resource type="Script" uid="uid://083rvljxf50p" path="res://scripts/mask.gd" id="1_nair6"]
 [ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="2_xpdyg"]
