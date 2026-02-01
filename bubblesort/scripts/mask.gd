@@ -6,7 +6,7 @@ class_name MaskScene
 @onready var collision: CollisionPolygon2D = $collision
 
 #current charm that is selected
-var focus_charm
+var focus_charm: AccessoryScene
 var placed := false
 
 func new_mask(mask_resource: Mask) -> void:

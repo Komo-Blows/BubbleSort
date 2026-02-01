@@ -10,7 +10,8 @@ var recent_characters : Array[character] = []
 enum SatisfactionLevel {
 	HAPPY,
 	MEH,
-	UPSET
+	UPSET,
+	CHOPPED
 }
 
 func update_character(char : character):
@@ -28,16 +29,15 @@ func _ready():
 			characters.append(file)
 	assert(!characters.is_empty(), "no characters to load")
 	
-	update_character(current_character)
-
 @onready
 var audio = $AudioStreamPlayer2D
-func update():
-	while true:
+func update(force_character = null):
+	if force_character:
+		current_character = force_character
+	else:
 		current_character = characters.pick_random()
-		if !recent_characters.has(current_character):
-			break
-	print(recent_characters)
+		if recent_characters.has(current_character):
+			assert(false, 'current in recent')
 	recent_characters.append(current_character)
 	update_character(current_character)
 	
@@ -50,6 +50,11 @@ func update():
 ## and displays a satisfaction emoji. Does not automatically cycle characters.
 ## Returns a tween for the satisfaction animation, with which the root can decide how to act.
 func take_mask(mask: MaskScene) -> Tween:
+	var satisfaction_level: SatisfactionLevel = self.calculate_reaction(mask)
+	return self.display_reaction(satisfaction_level)
+	
+## Given the mask for the current character, calculates a satisfaction score for the character.
+func calculate_satisfaction(mask: MaskScene) -> int:
 	var current_char_major_aesth: Globals.aesthetics = self.current_character.major
 	var current_char_minor_aesth: Globals.aesthetics = self.current_character.minor
 	var major_score: int = mask.aesthetic.get_dict()[current_char_major_aesth]
@@ -66,11 +71,19 @@ func calculate_satisfaction(major_score: int, minor_score: int) -> SatisfactionL
 	var total_score: int = 0
 	total_score += major_score * self.current_character.major_multiplier
 	total_score += minor_score * self.current_character.minor_multiplier
+	return total_score
+	
+## Given the mask for the current character, calculates a satisfaction reaction for the character.
+func calculate_reaction(mask: MaskScene) -> SatisfactionLevel:
+	var total_score: int = self.calculate_satisfaction(mask)
 	var satisfaction_limit: int = self.current_character.happy_satisfaction_level
-	# Range split is 0<->0.4, 0.4<->0.75, 0.75+ for upset, meh, and happy respectively.
-	if total_score < (0.4 * satisfaction_limit):
+	# Range split is [0, 0.3], (0.3, 0.6] (0.6, 0.8], 0.8+ portion of satisfaction level,
+	# for chopped, upset, meh, happy respectively.
+	if total_score <= (0.3 * satisfaction_limit):
+		return SatisfactionLevel.CHOPPED
+	elif (0.3 * satisfaction_limit) < total_score and total_score <= (0.6 * satisfaction_limit):
 		return SatisfactionLevel.UPSET
-	elif (0.4 * satisfaction_limit) <= total_score and total_score <= (0.75 * satisfaction_limit):
+	elif (0.6 * satisfaction_limit) < total_score and total_score <= (0.8 * satisfaction_limit):
 		return SatisfactionLevel.MEH
 	else:
 		return SatisfactionLevel.HAPPY
@@ -104,6 +117,8 @@ func get_emoji_texture(sl: SatisfactionLevel) -> Texture2D:
 		SatisfactionLevel.UPSET: 
 			play_sfx(upset_sfx)
 			return preload("res://sprites/characters/reactions/frustrated-blue-emoji-red.png")
+		SatisfactionLevel.CHOPPED: \
+		return preload("res://sprites/characters/reactions/scared-and-defending-blue-emoji-black.png")
 	# Default return is SatisfactionLevel.HAPPY	
 	play_sfx(happy_sfx)
 	return preload("res://sprites/characters/reactions/ok-sign-blue-emoji-green.png")

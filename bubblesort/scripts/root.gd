@@ -8,12 +8,13 @@ var animator = $AnimationPlayer
 var mask_menu = $"mask selector"
 
 var current_mask: MaskScene = null
+var points := 0
 
 func new_character(delay : int = 2):
 	animator.play("slide out")
 	await animator.animation_finished
 	await get_tree().create_timer(delay).timeout
-	child.update()
+	child.update(preload('res://characters/cutesy.tres'))
 	animator.play("slide in")
 
 var charm_folder = 'res://accessories/'
@@ -30,7 +31,6 @@ func _ready():
 		$charm_bucket.add_charm(charm_resource)
 		if i >= 10: # ten charms only
 			break
-	
 	new_character()
 
 @onready
@@ -44,7 +44,7 @@ func select_mask(resource): # connected as signal to mask_shape_selected
 	mask.new_mask(resource)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("space"):
+	if Input.is_action_just_pressed("space") and current_mask:
 		await child.take_mask(current_mask).finished #Creates a reaction, and lets it finish.
 		new_character()
 	if Input.is_action_just_pressed("screenshot"):
@@ -66,3 +66,7 @@ func take_screenshot() -> void:
 func color_mask(c: Color): 
 	if current_mask: 
 		current_mask.color(c)
+
+func update_points(number):
+	points = number
+	$Points.text = 'Happiness Points: ' + str(points)

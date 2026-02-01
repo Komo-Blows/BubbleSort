@@ -10,4 +10,7 @@ major = 4
 minor = 4
 image = ExtResource("1_wx68s")
 sfx = ExtResource("3_jhrul")
+major_multiplier = 0
+minor_multiplier = 0
+happy_satisfaction_level = 0
 metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"
