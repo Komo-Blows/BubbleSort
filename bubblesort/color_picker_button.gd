@@ -7,7 +7,9 @@ var mouse_over:bool = false
 func _process(d):
 	if picked_up:
 		icon.global_position = get_global_mouse_position() + Vector2(27, -27)
-		var color := Color(0.5, 1, 0.5, 1) # get color at mouse position :cry:
+		var mp = get_global_mouse_position()
+		
+		var color := get_viewport().get_texture().get_image().get_pixel(mp.x,mp.y) # get color at mouse position :cry:
 		icon.modulate = color
 		bg.modulate = color
 		if Input.is_action_just_pressed('click'):
