@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Mask" load_steps=5 format=3 uid="uid://cuwfq3r3or8bj"]
+
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_bjssh"]
+[ext_resource type="Texture2D" uid="uid://cditms5jdiieb" path="res://sprites/masks/freddy.png" id="2_dfi6j"]
+[ext_resource type="Script" uid="uid://c6btc8e6vrdny" path="res://scripts/mask_resource.gd" id="3_45m3v"]
+
+[sub_resource type="Resource" id="Resource_7tv2l"]
+script = ExtResource("1_bjssh")
+techy = 0
+fishy = 0
+cutesy = 3
+preppy = 0
+ugly = 1
+demonic = 4
+cowboy = 0
+irish = 0
+badly_drawn = 0
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("3_45m3v")
+image = ExtResource("2_dfi6j")
+aesthetic = SubResource("Resource_7tv2l")
+metadata/_custom_type_script = "uid://c6btc8e6vrdny"

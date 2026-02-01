@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://d21jnawfdduxi"]
+
+[ext_resource type="Texture2D" uid="uid://dp7tc1yt8affp" path="res://sprites/characters/demonic-preppy.png" id="1_ienpk"]
+[ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_sf0ur"]
+
+[resource]
+script = ExtResource("1_sf0ur")
+major = 5
+minor = 3
+image = ExtResource("1_ienpk")
+metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhyj06pd06vcj"]
+
+[ext_resource type="Script" uid="uid://bw0ycv6gvjf7y" path="res://scripts/main_menu.gd" id="1_imvie"]
+[ext_resource type="Texture2D" uid="uid://cn3qbf1u1ksd5" path="res://sprites/home_screen.png" id="2_ng0o5"]
+[ext_resource type="FontFile" uid="uid://cvy36cmppc64f" path="res://BLKCHCRY.TTF" id="3_8r73w"]
+[ext_resource type="Theme" uid="uid://c8p03k0u8y5f4" path="res://main_menu.tres" id="4_1hnlc"]
+[ext_resource type="Script" uid="uid://bu7drifkov024" path="res://scripts/new_game.gd" id="5_50h1w"]
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_imvie")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ng0o5")
+centered = false
+
+[node name="TextEdit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 521.0
+offset_right = 1626.0
+offset_bottom = 1026.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8r73w")
+theme_override_font_sizes/font_size = 200
+text = "Papa's 
+Masquerada"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -395.0
+offset_right = 860.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="New Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_1hnlc")
+text = "New game"
+script = ExtResource("5_50h1w")
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_1hnlc")
+text = "Continue"
+
+[node name="reminder" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_1hnlc")
+text = "Rule Reminder"
+
+[node name="photo gallery" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_1hnlc")
+text = "Photo Gallery"
+
+[connection signal="pressed" from="VBoxContainer/New Game" to="VBoxContainer/New Game" method="_on_pressed"]
+[connection signal="button_down" from="VBoxContainer/photo gallery" to="." method="_on_photo_gallery_button_down"]

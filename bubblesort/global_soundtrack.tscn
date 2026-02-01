@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://buug4hrm7w2c1"]
+
+[ext_resource type="AudioStream" uid="uid://c6obfcut8movi" path="res://MasqueradeMainTheme.wav" id="1_vwdlq"]
+
+[node name="global_soundtrack" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_vwdlq")
+autoplay = true

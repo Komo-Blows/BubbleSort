@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://cjscncodgviqc"]
+
+[ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_nw0e6"]
+[ext_resource type="Texture2D" uid="uid://cwgodpl75xgly" path="res://sprites/characters/demonic-fish.png" id="1_ywsjk"]
+
+[resource]
+script = ExtResource("1_nw0e6")
+major = 5
+minor = 1
+image = ExtResource("1_ywsjk")
+metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

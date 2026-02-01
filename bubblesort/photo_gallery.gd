@@ -7,7 +7,7 @@ var photo_grid = $photo_grid
 var page = 0
 
 var screenshot_folder = "res://screenshots/"
-var photo_object = preload("res://scenes/photo_gallery_button.tscn")
+var photo_object = preload("res://scenes/menus/photo_gallery_button.tscn")
 func _ready() -> void:
 	page = 0
 	var files = DirAccess.get_files_at(screenshot_folder)

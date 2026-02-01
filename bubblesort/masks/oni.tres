@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Mask" load_steps=5 format=3 uid="uid://dy6b6pi0f4ko0"]
+
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_td3fo"]
+[ext_resource type="Texture2D" uid="uid://b1jvh7lvat312" path="res://sprites/masks/oni.png" id="2_i6lc3"]
+[ext_resource type="Script" uid="uid://c6btc8e6vrdny" path="res://scripts/mask_resource.gd" id="3_t6mho"]
+
+[sub_resource type="Resource" id="Resource_c20gc"]
+script = ExtResource("1_td3fo")
+techy = 2
+fishy = 0
+cutesy = 0
+preppy = 0
+ugly = 1
+demonic = 4
+cowboy = 0
+irish = 0
+badly_drawn = 0
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("3_t6mho")
+image = ExtResource("2_i6lc3")
+aesthetic = SubResource("Resource_c20gc")
+metadata/_custom_type_script = "uid://c6btc8e6vrdny"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://dfrnejxj7h42e"]
+
+[ext_resource type="Texture2D" uid="uid://busnmlmqaqflw" path="res://sprites/characters/goth-demonic.png" id="1_8nned"]
+[ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_a23y8"]
+
+[resource]
+script = ExtResource("1_a23y8")
+major = 2
+minor = 5
+image = ExtResource("1_8nned")
+metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

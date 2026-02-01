@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://dbeysqxvoa7i4"]
+
+[ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_2mcpx"]
+[ext_resource type="Texture2D" uid="uid://cupprgsi7tfv" path="res://sprites/characters/cutesy.png" id="1_q8ouh"]
+
+[resource]
+script = ExtResource("1_2mcpx")
+major = 2
+minor = 2
+image = ExtResource("1_q8ouh")
+metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

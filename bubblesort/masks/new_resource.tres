@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Mask" load_steps=5 format=3 uid="uid://duioldp210u2a"]
+
+[ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_vwtax"]
+[ext_resource type="Script" uid="uid://c6btc8e6vrdny" path="res://scripts/mask_resource.gd" id="1_yl7ru"]
+[ext_resource type="Texture2D" uid="uid://bpux8l8n1pip8" path="res://sprites/masks/scary_man.png" id="2_81hty"]
+
+[sub_resource type="Resource" id="Resource_d37to"]
+script = ExtResource("1_vwtax")
+techy = 4
+fishy = 0
+cutesy = 0
+preppy = 0
+ugly = 0
+demonic = 0
+cowboy = 3
+irish = 0
+badly_drawn = 0
+metadata/_custom_type_script = "uid://blc2d1hrqqvph"
+
+[resource]
+script = ExtResource("1_yl7ru")
+image = ExtResource("2_81hty")
+aesthetic = SubResource("Resource_d37to")
+metadata/_custom_type_script = "uid://c6btc8e6vrdny"
