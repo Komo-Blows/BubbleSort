@@ -30,7 +30,7 @@ func _ready():
 		if i >= 10: # ten charms only
 			break
 	
-	await get_tree().create_timer(1).timeout
+	#await get_tree().create_timer(1).timeout
 	new_character()
 
 var mask_scene = preload('res://scenes/mask_scene.tscn')

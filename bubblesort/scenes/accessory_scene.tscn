@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://dqamcsesgg8q2" path="res://scripts/accessory_scene.gd" id="1_712mg"]
 [ext_resource type="Resource" uid="uid://6o66abw1qvi2" path="res://accessories/bat_charm.tres" id="2_8mlyu"]
 [ext_resource type="Theme" uid="uid://c8p03k0u8y5f4" path="res://main_menu.tres" id="3_oggj0"]
-[ext_resource type="Script" path="res://scenes/info_bubble.gd" id="4_l2y04"]
+[ext_resource type="Script" uid="uid://w4ol2ngg1637" path="res://scenes/info_bubble.gd" id="4_l2y04"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mlyu"]
 radius = 39.0128
 
 [node name="accessory_scene" type="RigidBody2D"]
+z_index = 1
 collision_layer = 2
 collision_mask = 2
 input_pickable = true
