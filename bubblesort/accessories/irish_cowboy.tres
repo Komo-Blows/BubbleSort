@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://blc2d1hrqqvph"
 [resource]
 script = ExtResource("1_iwecv")
 aesthetic = SubResource("Resource_vi2uq")
-name = "irish cowboy"
+name = "Luckiest In Show Award"
 image = ExtResource("2_70pqt")
 image_scale = 0.1
 collision_radius = 20

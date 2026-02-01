@@ -164,9 +164,9 @@ texture = ExtResource("8_7pvxh")
 
 [node name="Points" type="Label" parent="."]
 texture_filter = 1
-offset_left = 1558.0
-offset_top = 16.0
-offset_right = 1709.0
-offset_bottom = 39.0
+offset_left = 1576.0
+offset_top = 983.0
+offset_right = 1727.0
+offset_bottom = 1006.0
 scale = Vector2(2.08, 2.84)
 text = "Happiness Points: 0"

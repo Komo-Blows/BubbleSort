@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Accessory" load_steps=5 format=3 uid="uid://57oh4eo74st"]
+[gd_resource type="Resource" script_class="Accessory" load_steps=5 format=3 uid="uid://cuene0e83pcfn"]
 
 [ext_resource type="Script" uid="uid://blc2d1hrqqvph" path="res://scripts/aesthetics_picker_resource.gd" id="1_048dr"]
 [ext_resource type="Script" uid="uid://ct50su2tauap" path="res://scripts/accessory_resource.gd" id="1_hvf3w"]
@@ -7,9 +7,9 @@
 [sub_resource type="Resource" id="Resource_dqs4l"]
 script = ExtResource("1_048dr")
 techy = 0
-fishy = 5
+fishy = 2
 cutesy = 0
-preppy = 0
+preppy = 2
 ugly = 0
 demonic = 0
 cowboy = 0
@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://blc2d1hrqqvph"
 [resource]
 script = ExtResource("1_hvf3w")
 aesthetic = SubResource("Resource_dqs4l")
-name = ""
+name = "HandsomeFish"
 image = ExtResource("2_irty8")
 image_scale = 0.1
 collision_radius = 20

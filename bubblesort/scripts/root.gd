@@ -8,7 +8,7 @@ var animator = $AnimationPlayer
 var mask_menu = $"mask selector"
 
 var current_mask: MaskScene = null
-var points := 0
+
 
 func new_character(force_character = null):
 	animator.play("slide out")
@@ -67,6 +67,7 @@ func color_mask(c: Color):
 	if current_mask: 
 		current_mask.color(c)
 
+var points := 0
 func update_points(number):
 	points = number
 	$Points.text = 'Happiness Points: ' + str(points)
