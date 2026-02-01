@@ -54,6 +54,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				stuck = true
 				Signals.showhide_instructions.emit(false)
 		else:
+			hide_info()
 			Signals.showhide_instructions.emit(true)
 			set_collision_layer_value(2, false)
 			set_collision_mask_value(2, false)
@@ -91,6 +92,7 @@ func display_info():
 
 func hide_info():
 	info_bubble.visible = false
+	timer.stop()
 
 func _on_info_timer_timeout() -> void:
 	display_info()
