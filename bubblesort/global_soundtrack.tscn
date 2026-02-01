@@ -1,7 +1,112 @@
-[gd_scene load_steps=2 format=3 uid="uid://buug4hrm7w2c1"]
+[gd_scene load_steps=8 format=3 uid="uid://buug4hrm7w2c1"]
 
-[ext_resource type="AudioStream" uid="uid://c6obfcut8movi" path="res://MasqueradeMainTheme.wav" id="1_vwdlq"]
+[ext_resource type="AudioStream" uid="uid://bso8ixmw63iwq" path="res://audio/MasqueradeTitleTheme.wav" id="1_6du74"]
+[ext_resource type="Script" uid="uid://d2lewriplgpy8" path="res://global_soundtrack.gd" id="2_6du74"]
+[ext_resource type="AudioStream" uid="uid://ck641hwqf7bsd" path="res://audio/MasqueradeMainTheme.wav" id="3_kn71l"]
 
-[node name="global_soundtrack" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_vwdlq")
+[sub_resource type="Animation" id="Animation_vpx28"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6du74"]
+resource_name = "play_main"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main:volume_db")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.2, 1, 1),
+"update": 0,
+"values": [-80.0, -10.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.2, 1, 1),
+"update": 0,
+"values": [0.0, -10.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_kn71l"]
+resource_name = "play_title"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.5, 1, 1),
+"update": 0,
+"values": [0.0, -10.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.5, 1, 1),
+"update": 0,
+"values": [-80.0, -10.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4t0xx"]
+_data = {
+&"RESET": SubResource("Animation_vpx28"),
+&"play_main": SubResource("Animation_6du74"),
+&"play_title": SubResource("Animation_kn71l")
+}
+
+[node name="global_soundtrack" type="Node"]
+script = ExtResource("2_6du74")
+
+[node name="title" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_6du74")
 autoplay = true
+
+[node name="main" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kn71l")
+volume_db = -80.0
+autoplay = true
+
+[node name="audio_fader" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_4t0xx")
+}
+speed_scale = 0.2

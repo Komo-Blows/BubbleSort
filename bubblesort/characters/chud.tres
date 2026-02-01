@@ -1,11 +1,16 @@
-[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://c887nqokp6vjn"]
+[gd_resource type="Resource" script_class="character" load_steps=4 format=3 uid="uid://c887nqokp6vjn"]
 
 [ext_resource type="Texture2D" uid="uid://cu7tq7lt2164w" path="res://sprites/characters/image.png" id="1_wx68s"]
 [ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="2_jhrul"]
+[ext_resource type="AudioStream" uid="uid://bt5kmdhhxae2d" path="res://audio/character sfx/ugly_vfx.wav" id="3_jhrul"]
 
 [resource]
 script = ExtResource("2_jhrul")
 major = 4
 minor = 4
 image = ExtResource("1_wx68s")
+sfx = ExtResource("3_jhrul")
+major_multiplier = 0
+minor_multiplier = 0
+happy_satisfaction_level = 0
 metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

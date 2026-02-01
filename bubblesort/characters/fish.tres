@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://bymeptv32xfgt"]
+[gd_resource type="Resource" script_class="character" load_steps=4 format=3 uid="uid://bymeptv32xfgt"]
 
 [ext_resource type="Texture2D" uid="uid://cnjoevkg5ahem" path="res://sprites/characters/fish.png" id="1_5uf0e"]
 [ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_7oiep"]
+[ext_resource type="AudioStream" uid="uid://b1m2sdqra6tbb" path="res://audio/character sfx/fishy_vfx.wav" id="3_5hy50"]
 
 [resource]
 script = ExtResource("1_7oiep")
 major = 1
 minor = 3
 image = ExtResource("1_5uf0e")
+sfx = ExtResource("3_5hy50")
 metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

@@ -2,10 +2,14 @@ extends Control
 
 @onready
 var animator = $animator
+@onready
+var audio = $AudioStreamPlayer2D
 
+var fly_on_sfx = preload("res://audio/masks_fly_onscreen.wav")
 func enable():
 	visible = true
 	print(visible)
+	audio.play()
 	for child in grid_container.get_children():
 		#print("ratata")
 		child.rotation_degrees = 42.4
