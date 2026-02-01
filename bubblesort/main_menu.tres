@@ -14,11 +14,18 @@ texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u88ro"]
 texture = ExtResource("2_s523i")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+region_rect = Rect2(0, 0, 250, 250)
 
 [resource]
+Button/font_sizes/font_size = 64
 Button/fonts/font = ExtResource("1_u88ro")
 Button/styles/focus = SubResource("StyleBoxEmpty_brgj2")
 Button/styles/normal = SubResource("StyleBoxTexture_277qh")
-Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_color = Color(0.69723, 0.891859, 0.890366, 1)
+Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_u88ro")
 Label/styles/normal = SubResource("StyleBoxTexture_u88ro")

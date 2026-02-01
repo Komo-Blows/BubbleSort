@@ -15,6 +15,14 @@ func _ready():
 	sprite.scale = Vector2(accessory.image_scale, accessory.image_scale)
 	name = accessory.name
 	collision.shape.radius = accessory.collision_radius
+	
+	var text_to_bubble = ""
+	var aesthetic_dict = accessory.aesthetic.get_dict()
+	for key in aesthetic_dict:
+		if aesthetic_dict[key] != 0:
+			print(aesthetic_dict)
+			text_to_bubble += str(Globals.aesthetics.keys()[key]) + " : " + str(aesthetic_dict[key]) + "\n"
+	info_bubble.text = text_to_bubble
 
 var mouse_over = false
 var follow_mouse = false
@@ -30,6 +38,7 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	if !follow_mouse and not stuck:
+		hide_info()
 		timer.stop()
 		mouse_over = false
 		sprite.scale = Vector2(accessory.image_scale, accessory.image_scale)
@@ -67,5 +76,14 @@ func attach(parent):
 	sleeping = true
 	lock_rotation = true
 
+@onready
+var info_bubble = $info_bubble
 func display_info():
-	
+	info_bubble.visible = true
+
+func hide_info():
+	info_bubble.visible = false
+
+
+func _on_info_timer_timeout() -> void:
+	display_info()

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhyj06pd06vcj"]
+[gd_scene load_steps=5 format=3 uid="uid://dhyj06pd06vcj"]
 
 [ext_resource type="Texture2D" uid="uid://cn3qbf1u1ksd5" path="res://sprites/home_screen.png" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://cvy36cmppc64f" path="res://BLKCHCRY.TTF" id="2_bqqt6"]
 [ext_resource type="Theme" uid="uid://c8p03k0u8y5f4" path="res://main_menu.tres" id="2_ekxnf"]
+[ext_resource type="Script" uid="uid://bu7drifkov024" path="res://scenes/new_game.gd" id="4_wu84c"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3
@@ -21,7 +23,8 @@ offset_left = 69.0
 offset_top = 521.0
 offset_right = 1626.0
 offset_bottom = 1026.0
-theme = ExtResource("2_ekxnf")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 200
 text = "Papa's 
 Masquerada"
@@ -33,17 +36,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -37.0
-offset_right = 398.0
-offset_bottom = 177.0
+offset_left = -8.0
+offset_top = -395.0
+offset_right = 860.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="New Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+text = "New game"
+script = ExtResource("4_wu84c")
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+text = "Continue"
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_ekxnf")
-text = "Play game"
+text = "Rule Reminder"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[connection signal="pressed" from="VBoxContainer/New Game" to="VBoxContainer/New Game" method="_on_pressed"]

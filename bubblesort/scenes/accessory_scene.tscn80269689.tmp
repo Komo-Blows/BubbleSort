@@ -1,16 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6850us3kuhpt"]
+[gd_scene load_steps=5 format=3 uid="uid://c6850us3kuhpt"]
 
 [ext_resource type="Script" uid="uid://dqamcsesgg8q2" path="res://scripts/accessory_scene.gd" id="1_712mg"]
 [ext_resource type="Resource" uid="uid://6o66abw1qvi2" path="res://accessories/bat_charm.tres" id="2_8mlyu"]
 [ext_resource type="Theme" uid="uid://c8p03k0u8y5f4" path="res://main_menu.tres" id="3_oggj0"]
-[ext_resource type="Script" uid="uid://w4ol2ngg1637" path="res://scenes/info_bubble.gd" id="4_l2y04"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mlyu"]
 radius = 39.0128
 
 [node name="accessory_scene" type="RigidBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 input_pickable = true
 angular_damp = 3.571
 script = ExtResource("1_712mg")
@@ -22,20 +21,12 @@ accessory = ExtResource("2_8mlyu")
 shape = SubResource("CircleShape2D_8mlyu")
 
 [node name="info_timer" type="Timer" parent="."]
-wait_time = 0.25
 
-[node name="info_bubble" type="Label" parent="."]
-visible = false
-z_index = 10
-offset_left = 41.0
-offset_top = -50.0
-offset_right = 205.0
-offset_bottom = -10.0
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 theme = ExtResource("3_oggj0")
-text = "heres some helpful info text"
-script = ExtResource("4_l2y04")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="timeout" from="info_timer" to="." method="_on_info_timer_timeout"]
