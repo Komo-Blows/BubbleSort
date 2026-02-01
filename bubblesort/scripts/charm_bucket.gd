@@ -15,9 +15,11 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("A"):
 		if on_screen:
 			animator.play("slide out")
+			$CharmInstruction.visible = true
 			on_screen = false
 		else:
 			animator.play("slide in")
+			$CharmInstruction.visible = false
 			on_screen = true
 		
 

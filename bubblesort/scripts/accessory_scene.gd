@@ -52,7 +52,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			# check if attach to mask
 			if over_mask:
 				stuck = true
+				Signals.showhide_instructions.emit(false)
 		else:
+			Signals.showhide_instructions.emit(true)
 			set_collision_layer_value(2, false)
 			set_collision_mask_value(2, false)
 			follow_mouse = true
@@ -65,9 +67,9 @@ func _process(_d) -> void:
 			angular_velocity = Input.get_axis('Q', 'E')*2
 		var mouse_direction = get_global_mouse_position() - global_position
 		linear_velocity = mouse_direction * follow_strength
-		if sprite.scale.x < 2 and Input.is_action_pressed("W"):
+		if sprite.scale.x < 5 and Input.is_action_pressed("W"):
 			sprite.scale *= 1.01
-		if sprite.scale.x > 0.5 and Input.is_action_pressed("S"):
+		if sprite.scale.x > 0.2 and Input.is_action_pressed("S"):
 			sprite.scale *= 0.99
 
 func attach(parent):
@@ -75,6 +77,7 @@ func attach(parent):
 	freeze = true
 	sleeping = true
 	lock_rotation = true
+	Signals.showhide_instructions.emit(false)
 
 @onready
 var info_bubble = $info_bubble
@@ -83,7 +86,6 @@ func display_info():
 
 func hide_info():
 	info_bubble.visible = false
-
 
 func _on_info_timer_timeout() -> void:
 	display_info()

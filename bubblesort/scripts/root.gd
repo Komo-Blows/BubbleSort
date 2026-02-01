@@ -20,6 +20,7 @@ var charm_folder = 'res://accessories/'
 func _ready():
 	# initialize Charms
 	Signals.mask_shape_selected.connect(select_mask)
+	Signals.showhide_instructions.connect(showhide_instructions)
 	
 	var i = 0
 	var files = DirAccess.get_files_at(charm_folder)
@@ -49,6 +50,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("screenshot"):
 		take_screenshot()
 	#$Camera2D.zoom += Vector2(0.001, 0.001)
+
+func showhide_instructions(toggle):
+	$instructions.visible = toggle
 
 
 func take_screenshot() -> void:
