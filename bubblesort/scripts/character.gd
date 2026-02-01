@@ -7,7 +7,8 @@ var current_character : character
 
 var major_aesthetic : Globals.aesthetics
 var minor_aesthetic : Globals.aesthetics
-var characters := []
+var characters : Array[character] = []
+var recent_characters : Array[character] = []
 
 func update_character(char : character):
 	sprite.texture = char.image
@@ -28,5 +29,11 @@ func _ready():
 
 func update():
 	print("new character incoming!")
-	current_character = characters.pick_random()
+	while true:
+		current_character = characters.pick_random()
+		
+		if !recent_characters.has(current_character):
+			break
+	print(recent_characters)
+	recent_characters.append(current_character)
 	update_character(current_character)
