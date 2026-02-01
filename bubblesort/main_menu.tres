@@ -1,12 +1,28 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c8p03k0u8y5f4"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://c8p03k0u8y5f4"]
 
 [ext_resource type="FontFile" uid="uid://cvy36cmppc64f" path="res://BLKCHCRY.TTF" id="1_u88ro"]
+[ext_resource type="Texture2D" uid="uid://skx0sjuff2jm" path="res://sprites/button_hover.png" id="2_brgj2"]
 [ext_resource type="Texture2D" uid="uid://bwsungdff7dij" path="res://sprites/button.png" id="2_s523i"]
+[ext_resource type="Texture2D" uid="uid://jhvtfcwdn7fr" path="res://sprites/button_pressed.png" id="4_277qh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brgj2"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_filu0"]
+texture = ExtResource("2_brgj2")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_277qh"]
 texture = ExtResource("2_s523i")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4qwew"]
+texture = ExtResource("4_277qh")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
@@ -24,7 +40,9 @@ region_rect = Rect2(0, 0, 250, 250)
 Button/font_sizes/font_size = 64
 Button/fonts/font = ExtResource("1_u88ro")
 Button/styles/focus = SubResource("StyleBoxEmpty_brgj2")
+Button/styles/hover = SubResource("StyleBoxTexture_filu0")
 Button/styles/normal = SubResource("StyleBoxTexture_277qh")
+Button/styles/pressed = SubResource("StyleBoxTexture_4qwew")
 Label/colors/font_color = Color(0.69723, 0.891859, 0.890366, 1)
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_u88ro")

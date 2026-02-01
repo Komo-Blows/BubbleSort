@@ -11,8 +11,8 @@ radius = 39.0128
 [node name="accessory_scene" type="RigidBody2D"]
 top_level = true
 z_index = 1
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 input_pickable = true
 angular_damp = 3.571
 script = ExtResource("1_712mg")
@@ -36,6 +36,8 @@ offset_bottom = -10.0
 theme = ExtResource("3_oggj0")
 text = "heres some helpful info text"
 script = ExtResource("4_l2y04")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

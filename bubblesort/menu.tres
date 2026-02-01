@@ -23,4 +23,4 @@ Button/styles/focus = SubResource("StyleBoxEmpty_5x383")
 Button/styles/hover = SubResource("StyleBoxFlat_bsmre")
 Button/styles/normal = SubResource("StyleBoxEmpty_y3icr")
 Button/styles/pressed = SubResource("StyleBoxFlat_5x383")
-GridContainer/constants/h_separation = 230
+GridContainer/constants/h_separation = 200

@@ -21,11 +21,12 @@ var points_dict: Dictionary[CharacterHandler.SatisfactionLevel, int] = {
 }
 var game_over: bool = false
 
-func new_character(delay : int = 2):
+
+func new_character(force_character = null):
 	animator.play("slide out")
 	await animator.animation_finished
-	await get_tree().create_timer(delay).timeout
-	child.update()
+	await get_tree().create_timer(1).timeout
+	child.update(force_character)
 	animator.play("slide in")
 
 var charm_folder = 'res://accessories/'
@@ -44,6 +45,7 @@ func _ready():
 			break
 	new_character()
 	update_points(day, points, quota)
+	new_character(preload('res://characters/cutesy.tres'))
 
 @onready
 var current_character = $character

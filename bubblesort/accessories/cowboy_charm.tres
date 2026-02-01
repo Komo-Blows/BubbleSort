@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://blc2d1hrqqvph"
 [resource]
 script = ExtResource("1_ach2h")
 aesthetic = SubResource("Resource_0jr66")
-name = ""
+name = "Spur"
 image = ExtResource("2_gfxux")
 image_scale = 1.0
 collision_radius = 20

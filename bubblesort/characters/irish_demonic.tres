@@ -1,11 +1,16 @@
-[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://cyh2rg1vw4k5a"]
+[gd_resource type="Resource" script_class="character" load_steps=4 format=3 uid="uid://cyh2rg1vw4k5a"]
 
 [ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_dsqxp"]
 [ext_resource type="Texture2D" uid="uid://238qs77b32t8" path="res://sprites/characters/irish_sad.png" id="1_kosnv"]
+[ext_resource type="AudioStream" uid="uid://cjy3ehbdaqqkd" path="res://audio/character sfx/irish_vfx.wav" id="3_hxs4d"]
 
 [resource]
 script = ExtResource("1_dsqxp")
 major = 7
 minor = 1
 image = ExtResource("1_kosnv")
+sfx = ExtResource("3_hxs4d")
+major_multiplier = 3
+minor_multiplier = 2
+happy_satisfaction_level = 1
 metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"

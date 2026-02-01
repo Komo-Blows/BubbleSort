@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct47o5cctj3xx"
-path="res://.godot/imported/big_forehead.png-0926bef24f416ed59d9fae124bc293f2.ctex"
+uid="uid://bgy1yn5r20xmo"
+path="res://.godot/imported/cute_irish.png-827de9eddea66cbc5dac46791403c3ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://masks/big_forehead.png"
-dest_files=["res://.godot/imported/big_forehead.png-0926bef24f416ed59d9fae124bc293f2.ctex"]
+source_file="res://sprites/charms/cute_irish.png"
+dest_files=["res://.godot/imported/cute_irish.png-827de9eddea66cbc5dac46791403c3ad.ctex"]
 
 [params]
 

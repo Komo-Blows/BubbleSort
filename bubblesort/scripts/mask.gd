@@ -9,7 +9,8 @@ class_name MaskScene
 var focus_charm: AccessoryScene
 var placed := false
 
-func new_mask(mask_resource) -> void:
+func new_mask(mask_resource: Mask) -> void:
+	aesthetic = mask_resource.aesthetic
 	sprite.texture = mask_resource.image
 	var bits = BitMap.new()
 	bits.create_from_image_alpha(mask_resource.image.get_image())
@@ -21,6 +22,7 @@ func new_mask(mask_resource) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if placed and body is AccessoryScene:
+		print('got something')
 		focus_charm = body
 		focus_charm.over_mask = true
 
