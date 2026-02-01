@@ -15,7 +15,7 @@ func _ready():
 	sprite.texture = accessory.image
 	sprite.scale = Vector2(accessory.image_scale, accessory.image_scale)
 	name = accessory.name
-	collision.shape.radius = accessory.collision_radius
+	collision.shape.radius = accessory.collision_radius* 2
 	
 	var text_to_bubble = ""
 	var aesthetic_dict = accessory.aesthetic.get_dict()
@@ -34,6 +34,7 @@ func _on_mouse_entered() -> void:
 	if !follow_mouse and not stuck:
 		timer.start()
 		#print("inflating")
+		z_index = 1
 		mouse_over = true
 		sprite.scale = Vector2(accessory.image_scale*1.5, accessory.image_scale*1.5)
 
@@ -42,9 +43,11 @@ func _on_mouse_exited() -> void:
 		hide_info()
 		timer.stop()
 		mouse_over = false
+		z_index = 0
 		sprite.scale = Vector2(accessory.image_scale, accessory.image_scale)
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	print(mouse_over)
 	if event.is_action_pressed('click') and mouse_over:
 		if follow_mouse:
 			set_collision_layer_value(2, true)
