@@ -45,6 +45,7 @@ func select_mask(resource): # connected as signal to mask_shape_selected
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
+		await child.take_mask(current_mask).finished #Creates a reaction, and lets it finish.
 		new_character()
 	if Input.is_action_just_pressed("screenshot"):
 		take_screenshot()
