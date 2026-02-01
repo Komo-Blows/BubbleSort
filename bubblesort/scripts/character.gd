@@ -1,3 +1,4 @@
+class_name CharacterHandler
 extends Node2D
 
 @onready var sprite = $sprite
