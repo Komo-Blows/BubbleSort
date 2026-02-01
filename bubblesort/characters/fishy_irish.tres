@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="character" load_steps=3 format=3 uid="uid://8eqclwkih0yh"]
+[gd_resource type="Resource" script_class="character" load_steps=4 format=3 uid="uid://8eqclwkih0yh"]
 
 [ext_resource type="Texture2D" uid="uid://debh04qf6qvkn" path="res://sprites/characters/fishy_irish.png" id="1_m7rud"]
 [ext_resource type="Script" uid="uid://cb3hu1sy2n1tf" path="res://scripts/character_resource.gd" id="1_rxh1d"]
+[ext_resource type="AudioStream" uid="uid://b1m2sdqra6tbb" path="res://audio/character sfx/fishy_vfx.wav" id="3_niuqq"]
 
 [resource]
 script = ExtResource("1_rxh1d")
 major = 1
 minor = 7
 image = ExtResource("1_m7rud")
+sfx = ExtResource("3_niuqq")
 metadata/_custom_type_script = "uid://cb3hu1sy2n1tf"
